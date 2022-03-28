@@ -25,7 +25,7 @@ def fmt_ins(column_str: str) -> str:
 
 def _prepare_insert(json_file, sql_insert_file, delete_date, **context):
     data = None
-    sql_out = f"delete from NEWS.NEWS_COMPANY where cast('{delete_date}' as DATE) = cast(PUBLISH_DATE as DATE);\n"
+    sql_out = f"delete from SA.NEWS_COMPANY where cast('{delete_date}' as DATE) = cast(PUBLISH_DATE as DATE);\n"
     with open(json_file) as f:
         data = json.load(f)
     for art in data['articles']:
@@ -38,7 +38,7 @@ def _prepare_insert(json_file, sql_insert_file, delete_date, **context):
         URL = fmt_ins(art['url'])
         IMG_URL = fmt_ins(art['urlToImage'])
         PUBLISH_DATE = fmt_ins(art['publishedAt'])
-        sql_out += f'''insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+        sql_out += f'''insert into SA.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
                     values({COMPANY},{SOURCE_NAME},{AUTHOR},{TITLE},{DESCRIPTION},{CONTENT},{URL},{IMG_URL},cast({PUBLISH_DATE} as TIMESTAMP));\n'''
     with open(sql_insert_file, 'w') as f:
         f.write(sql_out)

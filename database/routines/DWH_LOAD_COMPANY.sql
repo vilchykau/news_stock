@@ -1,4 +1,4 @@
-create procedure LOAD_COMPANY()
+create or replace procedure DWH.LOAD_COMPANY()
     language PLPGSQL
 as
 $$
@@ -14,7 +14,7 @@ begin
     select comp.CO_ID,
            count.COT_ID,
            0
-    from NEWS.COMPANY ncomp
+    from SA.COMPANY ncomp
     inner join DBO.LCO_COMPANY comp on comp.CO_NAM_COMPANY_NAME = ncomp.NAME
     inner join DBO.COT_COUNTRY count on ncomp.COUNTRY = count.COT_COUNTRY;
 
@@ -22,4 +22,4 @@ begin
 END;
 $$;
 
-alter procedure LOAD_COMPANY() owner to AIRFLOW;
+alter procedure DWH.LOAD_COMPANY() owner to AIRFLOW;
