@@ -1,0 +1,142 @@
+[2022-03-27 12:08:47,359] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-26T00:00:00+00:00 [queued]>
+[2022-03-27 12:08:47,372] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-26T00:00:00+00:00 [queued]>
+[2022-03-27 12:08:47,372] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-27 12:08:47,372] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-03-27 12:08:47,372] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-27 12:08:47,387] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): write_to_postgres> on 2022-03-26T00:00:00+00:00
+[2022-03-27 12:08:47,390] {standard_task_runner.py:52} INFO - Started process 87 to run task
+[2022-03-27 12:08:47,393] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'write_to_postgres', '2022-03-26T00:00:00+00:00', '--job-id', '796', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmpaey2qnmu', '--error-file', '/tmp/tmp5338vjov']
+[2022-03-27 12:08:47,394] {standard_task_runner.py:77} INFO - Job 796: Subtask write_to_postgres
+[2022-03-27 12:08:47,433] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.write_to_postgres 2022-03-26T00:00:00+00:00 [running]> on host dd6a275532f2
+[2022-03-27 12:08:47,477] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=write_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-26T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-26T00:00:00+00:00
+[2022-03-27 12:08:47,536] {base.py:74} INFO - Using connection to: id: news_in. Host: postgres, Port: 5432, Schema: , Login: airflow, Password: XXXXXXXX, extra: None
+[2022-03-27 12:08:47,539] {dbapi.py:180} INFO - Running statement: delete from NEWS.NEWS_COMPANY where cast('2022-03-26' as DATE) = cast(PUBLISH_DATE as DATE);
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Wired','Andrew Couts','Hunt for Lapsus$ Hackers Leads to a British Teen','Plus: New details emerge about Russian hacks and hackers as the US warns of potential new attacks.','There are quiet weeks in the security world, and then there are weeks like this one. 
+
+Monday kicked off with the Lapsus$ extortion ganga cybercriminal group so bizarre and with such high-profile tar… [+5731 chars]','https://www.wired.com/story/russian-hackers-lapsus-north-korea/','https://media.wired.com/photos/623e53db429706abf8d5be52/191:100/w_1280,c_limit/security-325.jpg',cast('2022-03-26T13:00:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Boing Boing','Rob Beschizza','"NeRF" turns 2D photos into convincing 3D scenes','NVidia"s NeRF is an AI-driven tech that takes standard 2D photos and builds a 3D scene out of them. It"s much more comprehensive than prior efforts, with low-fidelity junk and voids in the peripheries. The AI fills it all in—very convincingly—in moments. — Re…','NVidia"s NeRF is an AI-driven tech that takes standard 2D photos and builds a 3D scene out of them. It"s much more comprehensive than prior efforts, with low-fidelity junk and voids in the peripherie… [+1137 chars]','https://boingboing.net/2022/03/26/nerf-turns-2d-photos-into-convincing-3d-scenes.html','https://i0.wp.com/boingboing.net/wp-content/uploads/2022/03/Screen-Shot-2022-03-26-at-9.32.35-AM.jpg?fit=1200%2C662&ssl=1',cast('2022-03-26T13:33:29Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Jose Najarro)','More Competition for Nvidia and AMD as Intel Releases Its New Product','The unbalance of supply and demand continues to weigh heavily on the semiconductor market.','Today"s video focuses on recent news affecting the semiconductor and technology industry. Here are some highlights from the video. 
+
+<ol><li>Intel ( INTC 0.41% ) will be hosting an event on March 30 … [+1171 chars]','https://www.fool.com/investing/2022/03/26/more-competition-for-nvidia-and-amd-as-intel-relea/','https://g.foolcdn.com/editorial/images/672020/copy-of-copy-of-copy-of-copy-of-copy-of-copy-of-copy-of-buy-or-pass-template-2022-03-25t143946158.png',cast('2022-03-26T10:00:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','MakeUseOf','Katie Rees','The Quick Guide to Mining Ethereum','Want to start mining crypto but don"t have the patience? Learn the ins and outs of Ethereum mining as quickly as possible.','If you"re interested in crypto, you probably know how profitable the process of mining can be. But mining has its risks, and there are many mistakes you can make along the way. This is the case when … [+8149 chars]','https://www.makeuseof.com/ethereum-mining-quick-guide/','https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/03/ethereum-coin-1.jpg',cast('2022-03-26T11:45:13Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Forbes','Tom Coughlin, Contributor, 
+
+ Tom Coughlin, Contributor
+
+ https://www.forbes.com/sites/tomcoughlin/','NVIDIA GTC Announcements Will Drive Accelerating Storage And Memory Demand','The 2022 NVIDIA GTC introduced many new processing systems and software that will drive AI development and the demand for digital storage and memory to support these applications.  These include products from VAST Data, DDN and InSpur.','NVIDIA Announcements at the 2022 GTC
+
+Image from NVIDIA Keynote
+
+The 2022 NVIDIA Global Technology Conference (GTC) featured announcements by the company on hardware and software to enable the next g… [+8123 chars]','https://www.forbes.com/sites/tomcoughlin/2022/03/25/nvidia-gtc-announcements-will-drive-accelerating-storage-and-memory-demand/','https://imageio.forbes.com/specials-images/imageserve/623e5f9faa2a35971a007e8d/0x0.png?format=png&width=1200&fit=bounds',cast('2022-03-26T00:49:15Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Digital Trends','Jacob Roach','Gigabyte Aero 16 review: You can do better','The Gigabyte Aero 16 isn"t a bad laptop thanks to some powerful hardware packed inside. However, it lacks the key features that make the best laptops the best.','Creator laptops are becoming increasingly popular, and why wouldn’t they? Take some components you would find in one of the best gaming laptops, put them in an aluminum body, add a few platform featu… [+14343 chars]','https://www.digitaltrends.com/laptop-reviews/gigabyte-aero-16-review/','https://icdn.digitaltrends.com/image/digitaltrends/gigabyte-aero-16-review-11.jpg',cast('2022-03-26T13:00:18Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Forbes','John Koetsier, Senior Contributor, 
+
+ John Koetsier, Senior Contributor
+
+ https://www.forbes.com/sites/johnkoetsier/','1000X More Efficient Neural Networks: Building An Artificial Brain With 86 Billion Physical (But Not Biological) Neurons','Building chips with analogs of biological neurons and dendrites and neural networks like our brains is also key to the massive efficiency gains Rain Neuromorphics is claiming: 1,000 times more efficient than existing digital chips from companies like Nvidia.','What if in our attempt to build artificial intelligence we dont simulate neurons in code and mimic neural networks in Python, but instead build actual physical neurons connected by physical synapses … [+7581 chars]','https://www.forbes.com/sites/johnkoetsier/2022/03/25/1000x-more-efficient-neural-networks-building-an-artificial-brain-with-86-billion-physical-but-not-biological-neurons/','https://imageio.forbes.com/specials-images/imageserve/623e6b7642047cf5da007e93/0x0.jpg?format=jpg&width=1200',cast('2022-03-26T01:29:34Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TechRadar','Darren Allan','Nvidia RTX 3090 Ti leak gives us an idea of just how fast the GPU is','This leak also tells us the TDP, which could challenge your PC"s power supply.','Nvidia’s RTX 3090 Ti graphics card, which is rumored to arrive imminently, could offer a performance boost of around 10% compared to the vanilla RTX 3090, according to the latest leak.
+
+This comes fr… [+2083 chars]','https://www.techradar.com/news/nvidia-rtx-3090-ti-leak-gives-us-an-idea-of-just-how-fast-the-gpu-is','https://cdn.mos.cms.futurecdn.net/zqbsmWwNbvZH5eoaNfCRs8-1200-80.jpg',cast('2022-03-26T11:22:43Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Neowin','fiza.ali@neowin.net (Fiza Ali)','NVIDIA"s Instant NeRF technology turns 2D photos into 3D scenes within seconds','With its new NeRF technology, NVIDIA has recreated a photo of Andy Warhol taking an instant photo and turning it into a 3D scene to pay tribute to the early days of Polaroid images. Read more...','NVIDIA has developed a new approach towards inverse rendering to train AI algorithms and develop a 3D scene from 2D photos taken at various angles in merely a few seconds. This method merges neural n… [+2439 chars]','https://www.neowin.net/news/nvidia039s-instant-nerf-technology-turns-2d-photos-into-3d-scenes-within-seconds/','https://cdn.neow.in/news/images/uploaded/2022/03/1648301970_2022-03-26_(1)_story.jpg',cast('2022-03-26T14:14:01Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Phoronix',null,'Debian 11.3 Released With Many Bug Fixes, Security Updates','Debian 12 "Bookworm" is coming next year while out this weekend is Debian 11.3 as the newest update in the "Bullseye" series...','Debian 12 "Bookworm" is coming next year while out this weekend is Debian 11.3 as the newest update in the "Bullseye" series.
+
+Debian 11.3 as usual for Debian GNU/Linux point releases is just about d… [+787 chars]','https://www.phoronix.com/scan.php?page=news_item&px=Debian-11.3-Released','https://www.phoronix.net/image.php?id=debian11-xeon-epyc&image=debian_11_1',cast('2022-03-26T21:33:17Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Dpreview.com','DPReview','DPReview TV: The five best handling digital cameras of all time','Outside of technical stuff like image quality and autofocus, there are some cameras that just make you happy when you hold them. To celebrate great ergonomics, Chris Niccolls runs down his top five handling digital cameras of all time.
+
+
+
+Subscribe to our YouTu…','Some cameras just feel right the moment they land in your hand. To celebrate great ergonomics, Chris Niccolls runs down his top five handling digital cameras of all time.
+
+NVIDIA Research has unveile… [+5340 chars]','https://www.dpreview.com/samples/7137289329/dpreview-tv-the-five-best-handling-digital-cameras-of-all-time','https://4.img-dpreview.com/files/p/E~TS940x788~articles/7137289329/BestHandling_4.3.jpeg',cast('2022-03-26T14:00:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TechSpot','Isaiah Mayersen','Nvidia is reportedly making 600W reference boards for the RTX 4090','Several leakers with good track records have recently said that they expect the RTX 4080 or 4090 to have a 600W TBP (total board power). A higher-end model, either the RTX 4090 Ti or some special edition card, could consume over 800W. But they"ve also attache…','Rumor mill: According to industry sources, Nvidia has shared its reference boards for the flagship RTX 4000-series GPUs, which might be called the RTX 4080, 4080 Ti, 4090, or 4090 Ti, with its OEM pa… [+2504 chars]','https://www.techspot.com/news/93940-nvidia-reportedly-making-600w-reference-boards-rtx-4090.html','https://static.techspot.com/images2/news/bigimage/2022/03/2022-03-26-image-6.jpg',cast('2022-03-26T16:36:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Theregister.com','Jeff Burt','How AI can help reverse-engineer malware: Predicting function names of code','Or: What kind of research Google"s getting in its Mandiant takeover
+
+GTC Disassembling and analyzing malware to see how it works, what it"s designed to do and how to protect against it, is mostly a long, manual task that requires a strong understanding of asse…','GTC Disassembling and analyzing malware to see how it works, what it"s designed to do and how to protect against it, is mostly a long, manual task that requires a strong understanding of assembly cod… [+6349 chars]','https://www.theregister.com/2022/03/26/machine_learning_malware/','https://regmedia.co.uk/2020/11/02/code.jpg',cast('2022-03-26T01:38:11Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Singularity Hub','Singularity Hub Staff','This Week’s Awesome Tech Stories From Around the Web (Through March 26)','ARTIFICIAL INTELLIGENCE Meta’s Yann LeCun Strives for Human-Level AI Ben Dickson | VentureBeat “What is the next step toward bridging the gap between natural and artificial intelligence? …[Chief AI scientist at Meta, Yann LeCun], has been thinking and talking…','Meta’s Yann LeCun Strives for Human-Level AIBen Dickson | VentureBeat“What is the next step toward bridging the gap between natural and artificial intelligence? …[Chief AI scientist at Meta, Yann LeC… [+4415 chars]','https://singularityhub.com/2022/03/26/this-weeks-awesome-tech-stories-from-around-the-web-through-march-26/','https://singularityhub.com/wp-content/uploads/2022/03/multi-colored-sphere-black-background.jpeg',cast('2022-03-26T14:00:10Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Cgchannel.com','Jim Thacker','Nvidia releases Omniverse Create 2022.1','Big update to the Omniverse scene layout app adds soft-body physics, new character animation toolset.','Nvidia has released Omniverse Create 2022.1, a major update to the scene layout and editing app for Omniverse, its real-time 3D collaboration platform.
+
+The release adds a new set of animation tools,… [+5214 chars]','http://www.cgchannel.com/2022/03/nvidia-releases-omniverse-create-2022-1/','',cast('2022-03-26T07:58:02Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Neowin','usama.jawad@neowin.net (Usama Jawad)','Microsoft Weekly: Sun Valleys on the horizon, Lapsus$ hacks, and DirectStorage','Join us as we recap an exciting week in the Microsoft-verse full of Windows Easter eggs, news about cybersecurity incidents involving Lapsus$ and others, and gaming news including DirectStorage. Read more...','We are at the close of the last week of March, which means that it is once again time to recap everything that went on in the world of Microsoft in the past few days. This was a very eventful week du… [+7709 chars]','https://www.neowin.net/news/microsoft-weekly-sun-valleys-on-the-horizon-lapsus-hacks-and-directstorage/','https://cdn.neow.in/news/images/uploaded/2022/03/1648279424_wp661789-blue-gradient-wallpaper_(1)_story.jpg',cast('2022-03-26T17:16:02Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Levelup.com','Víctor Rosas','Sospechoso de hackeo a Nvidia y Microsoft habría acumulado más de $10MDD','Facebook / Twitter / YouTube / Instagram / Noticias / Discord / Foros / Telegram / WhatsApp
+
+Continuar leyendo »','Facebook / Twitter / YouTube / Instagram / Noticias / Discord / Foros / Telegram / WhatsApp
+
+Los recientes hackeos a Nvidia, Microsoft y Samsung no solo han llamado la atención por la facilidad con q… [+1985 chars]','https://www.levelup.com/noticias/668119/Sospechoso-de-hackeo-a-Nvidia-y-Microsoft-habria-acumulado-mas-de-10MDD','https://www.levelup.com/uploads/images/733455/733455_600x315.jpg',cast('2022-03-26T00:32:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TechRadar','desire.athow@futurenet.com (Desire Athow)','The world’s largest SSD just turned four and its 100TB capacity remains unmatched - but why?','Exadrive 100TB is still by far the biggest solid state drive by capacity available today','When Nimbus Data launched the 100TB ExaDrive DC on March 19, 2018, it was by far the largest solid state drive ever launched, noticeably larger than your average SSD as it used a 3.5-inch form factor… [+3634 chars]','https://www.techradar.com/news/the-worlds-largest-ssd-just-turned-four-and-its-100tb-capacity-remains-unmatched-but-why','https://cdn.mos.cms.futurecdn.net/cs8mRSACMZKSFvsg6HdzKM-1200-80.jpg',cast('2022-03-26T04:00:58Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Yahoo Entertainment','Ruchi Gupta','10 Technology Stocks to Buy According to Kevin Mccarthy’s Breakline Capital','In this article, we discuss 10 technology stocks to buy according to Kevin Mccarthy’s Breakline Capital. If you want to skip our detailed analysis of...','In this article, we discuss 10 technology stocks to buy according to Kevin Mccarthy"s Breakline Capital. If you want to skip our detailed analysis of Mccarthy"s history, investment philosophy, and he… [+12845 chars]','https://finance.yahoo.com/news/10-technology-stocks-buy-according-130639711.html','https://s.yimg.com/uu/api/res/1.2/hVbnVgU4j4wPMpE8Tlwr7w--~B/aD01MDE7dz03NTA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/insidermonkey.com/a536b046feba10cb4dd13acb3ec25df5',cast('2022-03-26T13:06:39Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Hotukdeals.com','idontflycathay','118° - ASUS ROG Strix G15, AMD Ryzen 5 5600X, 8GB RAM, 512GB SSD, NVIDIA GeForce GTX 1650, Desktop - £549.99 delivered (Members) @ Costco','Decent price.  Comes with 2 year warranty.<br /><br /><strong>Features<br /></strong>- AMD Ryzen 5 5600X Processor<br />- 8GB RAM<br />- 512GB SSD<br />- Nvidia GeForce GTX 1650 Graphics<br />- Windows 10 Home<br /><br />--<br />Give yourself a competitive ed…','Decent price. Comes with 2 year warranty.Features- AMD Ryzen 5 5600X Processor- 8GB RAM- 512GB SSD- Nvidia GeForce GTX 1650 Graphics- Windows 10 Home
+
+--Give yourself a competitive edge in esports wi… [+2414 chars]','https://www.hotukdeals.com/deals/asus-rog-strix-g15-amd-ryzen-5-5600x-8gb-ram-512gb-ssd-nvidia-geforce-gtx-1650-desktop-ps54999-delivered-members-at-costco-3910615','https://images.hotukdeals.com/threads/raw/HwHNp/3910615_1/re/1024x1024/qt/60/3910615_1.jpg',cast('2022-03-26T13:20:42Z' as TIMESTAMP));
+, parameters: None
+[2022-03-27 12:08:47,541] {dbapi.py:186} INFO - Rows affected: 1
+[2022-03-27 12:08:47,547] {python.py:118} INFO - Done. Returned value was: None
+[2022-03-27 12:08:47,560] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=write_to_postgres, execution_date=20220326T000000, start_date=20220327T120847, end_date=20220327T120847
+[2022-03-27 12:08:47,586] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-03-27 12:08:47,607] {local_task_job.py:146} INFO - Task exited with return code 0

@@ -1,0 +1,154 @@
+[2022-03-21 16:48:12,344] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-04T00:00:00+00:00 [queued]>
+[2022-03-21 16:48:12,455] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-04T00:00:00+00:00 [queued]>
+[2022-03-21 16:48:12,455] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 16:48:12,456] {taskinstance.py:1043} INFO - Starting attempt 6 of 6
+[2022-03-21 16:48:12,456] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 16:48:12,494] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): write_to_postgres> on 2022-03-04T00:00:00+00:00
+[2022-03-21 16:48:12,504] {standard_task_runner.py:52} INFO - Started process 337 to run task
+[2022-03-21 16:48:12,521] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'write_to_postgres', '2022-03-04T00:00:00+00:00', '--job-id', '748', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmpgwtuxai6', '--error-file', '/tmp/tmp0np8wbl0']
+[2022-03-21 16:48:12,524] {standard_task_runner.py:77} INFO - Job 748: Subtask write_to_postgres
+[2022-03-21 16:48:12,780] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.write_to_postgres 2022-03-04T00:00:00+00:00 [running]> on host dd6a275532f2
+[2022-03-21 16:48:12,856] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=write_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-04T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-04T00:00:00+00:00
+[2022-03-21 16:48:12,895] {base.py:74} INFO - Using connection to: id: news_in. Host: postgres, Port: 5432, Schema: , Login: airflow, Password: XXXXXXXX, extra: None
+[2022-03-21 16:48:12,922] {dbapi.py:180} INFO - Running statement: delete from NEWS.NEWS_COMPANY where cast('2022-03-04' as DATE) = cast(PUBLISH_DATE as DATE);
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Hackaday','Jonathan Bennett','This Week in Security: Ukraine, Nvidia, and Conti','The geopolitics surrounding the invasion of Ukraine are outside the scope of this column, but the cybersecurity ramifications are certainly fitting fodder. The challenge here is that almost everything of …read more','The geopolitics surrounding the invasion of Ukraine are outside the scope of this column, but the cybersecurity ramifications are certainly fitting fodder. The challenge here is that almost everythin… [+8492 chars]','https://hackaday.com/2022/03/04/this-week-in-security-ukraine-nvidia-and-conti/','https://hackaday.com/wp-content/uploads/2016/01/darkarts.jpg',cast('2022-03-04T15:00:09Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Slashdot.org','msmash','Cybercriminals Who Breached Nvidia Issue One of the Most Unusual Demands Ever','shanen shares a report: Data extortionists who stole up to 1 terabyte of data from Nvidia have delivered one of the most unusual ultimatums ever in the annals of cybercrime: allow Nvidia"s graphics cards to mine cryptocurrencies faster or face the imminent re…','The Fine Print: The following comments are owned by whoever posted them. We are not responsible for them in any way.','https://tech.slashdot.org/story/22/03/04/191244/cybercriminals-who-breached-nvidia-issue-one-of-the-most-unusual-demands-ever','https://a.fsdn.com/sd/topics/security_64.png',cast('2022-03-04T20:02:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Gizmodo.com','Asha Barbaschow','Lenovo Unveils New Range of Portable Machines for More Casual Gamers','Lenovo has released a new range of laptops it says are perfect for “younger” or “new” gamers entering the world of gaming – they also wouldn’t be terrible portable machines for more casual play, with a max weight of 2.5 kgs.Read more...','Lenovo has released a new range of laptops it says are perfect for younger or new gamers entering the world of gaming they also wouldnt be terrible portable machines for more casual play, with a max … [+4151 chars]','https://gizmodo.com/lenovo-unveils-new-range-of-portable-machines-for-more-1848613999','https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/968c6c69b277b486f745478c3bb4e847.png',cast('2022-03-04T21:17:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Rock Paper Shotgun','James Archer','Nvidia GeForce RTX 3050 review: DLSS for less','The Nvidia GeForce RTX 3050 might be the first GPU to benefit, in a roundabout way, from the bonkers price gouging that’s been spoiling the fun of graphics cards for nearly two years. In normal times, it wouldn’t make much sense to buy this £239 / $249 GPU – …','The Nvidia GeForce RTX 3050 might be the first GPU to benefit, in a roundabout way, from the bonkers price gouging that’s been spoiling the fun of graphics cards for nearly two years. In normal times… [+9515 chars]','https://www.rockpapershotgun.com/nvidia-geforce-rtx-3050-review','https://assets2.rockpapershotgun.com/msi-geforce-rtx-3060-gaming-x-trio.jpg/BROK/thumbnail/1600x900/format/jpg/quality/80/msi-geforce-rtx-3060-gaming-x-trio.jpg',cast('2022-03-04T14:44:11Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','MakeUseOf','Tashreef Shareef','How to Fix Mouse Lag in Windows 11 and 10','If your mouse isn"t as fast as you are, here are some ways to speed it back up.','Sometimes, you may notice that your mouse pointer will lag. This is irrespective of whether you have an external USB or wireless mouse connected to your Windows PC. While the reasons for mouse lag ca… [+7212 chars]','https://www.makeuseof.com/windows-11-mouse-lag/','https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/02/fix-mouse-lag-windows-11.jpg',cast('2022-03-04T16:15:14Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Techmeme.com',null,'Have I Been Pwned: hackers stole 71,000 Nvidia staff credentials, including email IDs and Windows password hashes, many of which were "cracked and circulated" (Carly Page/TechCrunch)','Carly Page / TechCrunch:
+
+Have I Been Pwned: hackers stole 71,000 Nvidia staff credentials, including email IDs and Windows password hashes, many of which were “cracked and circulated”  —  The ransomware group that claims to have taken a terabyte of data from …','CB Insights Newsletter
+
+724,948 subscribers get our free newsletter to stay a step ahead on technology trends, venture capital, startups, and the industries of tomorrow.','https://www.techmeme.com/220304/p27','https://techcrunch.com/wp-content/uploads/2022/03/GettyImages-1272953815-nvidia.jpg?w=599',cast('2022-03-04T21:15:01Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TechCrunch','Carly Page','Thousands of Nvidia employee passwords leak online as hackers" ransom deadline looms','The ransomware group that claims to have taken a terabyte of data from chipmaking giant Nvidia is threatening to release the company’s “most closely-guarded ...','The ransomware group that claims to have taken a terabyte of data from chipmaking giant Nvidia is threatening to release the companys most closely-guarded secrets today unless it meets the gang"s inc… [+2229 chars]','https://techcrunch.com/2022/03/04/nvidia-ransomware-hackers-demands/','https://s.yimg.com/ny/api/res/1.2/cRw2u_7K2cXJAhE_FGd4Aw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDE-/https://s.yimg.com/uu/api/res/1.2/_87t2vH0c8XCyx3QD6g7_Q--~B/aD0xMzM1O3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/techcrunch_350/80312dcff7581070b081fb3a0b3b7c01',cast('2022-03-04T15:09:43Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (James Brumley)','Why Nvidia Lost More of Its Value Than the Broad Market Did on Friday','A hacker group"s deadline appears to have come and gone without any response from the company, although it doesn"t necessarily matter.','What happened
+
+Shares of Nvidia(NASDAQ:NVDA) ended Friday"s session down to the tune of 3.3%, outpacing the overall market"s setback of around 1%. While much of the stock"s weakness can be chalked up… [+1931 chars]','https://www.fool.com/investing/2022/03/04/why-nvidia-lost-more-of-its-value-than-the-broad-m/','https://g.foolcdn.com/editorial/images/669195/falling-chart-on-chalk-board.jpg',cast('2022-03-04T21:48:43Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Windows Central','John Levite','Save $400 on the Razer Blade 15 gaming laptop with RTX 3070 graphics','You can grab the Razer Blade 15 gaming laptop on sale for $1,999.99 at Amazon. That"s a huge discount considering it has been selling for around $2,400 since last year and was going for as much as $2,600 in December. Today"s deal price is the lowest we have e…','You can grab the Razer Blade 15 gaming laptop on sale for $1,999.99 at Amazon. That"s a huge discount considering it has been selling for around $2,400 since last year and was going for as much as $2… [+1679 chars]','https://www.windowscentral.com/save-400-razer-blade-15-gaming-laptop-rtx-3070-graphics-card','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2022/03/razer-blade-10th-gen-laptop.jpg',cast('2022-03-04T20:20:02Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','PC Gamer','jorge.jimenez@futurenet.com (Jorge Jimenez)','Nvidia hackers leak employee credentials, threaten to release "Nvidia"s most closely guarded trade secrets"','Nvidia employee emails and passwords are now already being "cracked and circulated within the hacking community."','Hacker group Lapsus$ has leaked the credentials of more than 71,000 Nvidia employees after the company did not acquiesce to its demands. The group stole the corporate data during a recent ransomware … [+2111 chars]','https://www.pcgamer.com/nvidia-hackers-leak-employee-credentials-threaten-to-release-nvidias-most-closely-guarded-trade-secrets/','https://cdn.mos.cms.futurecdn.net/c7nVEMHKfBfXbDnyay5HWS-1200-80.jpeg',cast('2022-03-04T22:12:35Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','MakeUseOf','Tashreef Shareef','How To Fix Display Driver Stopped Responding In Windows 11/10','Is your screen going black randomly? It"s an annoying and worrying issue, but there are ways to fix the issue.','When Windows detects issues with your display driver, it will terminate and restart the process linked to it. This will cause your screen to go blank momentarily followed by the display driver stoppe… [+7556 chars]','https://www.makeuseof.com/windows-display-driver-stopped-responding/','https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/02/display-driver-stopped-responding-and-has-recovered.jpg',cast('2022-03-04T17:16:13Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TechCrunch','TechCrunchJapan Admin','【3月4日】掲載記事アクセスランキング・トップ5―1位はContiの内部チャットログ流出、2位はNVIDIA機密データ流出','掲載記事のうち、3月4日午前7時現在集計で最もアクセスのあった記事5本を紹介。
+
+<h2>第1位：<a target="_blank" href="https://jp.techcrunch.com/2022/03/01/2022-02-28-conti-ransomware-chats-leaked" rel="noopener">ロシアのウクライナ侵攻支持を宣言したContiランサムウェアグループの内部チャットがネットに流出</a></h2>
+
+<img class="aligncenter wp-image…','3475
+
+ContiVX-Underground
+
+NVIDIA31TechCrunch
+
+31NXC2
+
+4
+
+Alphabet228GoogleReuters
+
+Brands&amp;People on UnsplashNurPhoto / Getty ImagesAkos Stiller / Bloomberg / Getty ImagesNexon founder Jung-ju Ja… [+52 chars]','https://jp.techcrunch.com/2022/03/04/techcrunch-article-ranking-2022-03-04/','https://jp.techcrunch.com/wp-content/uploads/2022/03/2022-03-04-002-index.jpg?w=1024',cast('2022-03-04T02:00:30Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','MarketWatch','Steve Goldstein','Need to Know: Why Russia’s invasion of Ukraine may be the preamble to a second Cold War, leading to more volatility and supply shocks','It"s going to get rockier as a second split between East and West is being created.','To say this has been an eventful week has been an understatement. Through Friday morning, the 16% weekly surge in the S&amp;P GSCI index 
+
+ SPGSCI,
+
+ +0.85%
+
+tracking commodities is the highest in at… [+4844 chars]','https://www.marketwatch.com/story/why-russias-invasion-of-ukraine-may-be-the-preamble-to-a-second-cold-war-leading-to-more-volatility-and-supply-shocks-11646395477','https://images.mktw.net/im-498026/social',cast('2022-03-04T12:04:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','redmondpie.com','Oliver Haslam','Alienware’s 17-Inch Gaming Laptop With NVIDIA GeForce RTX 3060 Is Currently $450 Off','Amazon is now selling the Alienware x17 R1 gaming laptop for just $1,928.98. There are no discount codes or on-screen coupons for you to remember to use here, but you do probably need to make sure to place an order soon if you intend to pick this thing up.
+
+Th…','Amazon is now selling the Alienware x17 R1 gaming laptop for just $1,928.98. There are no discount codes or on-screen coupons for you to remember to use here, but you do probably need to make sure to… [+1334 chars]','https://www.redmondpie.com/alienwares-17-inch-gaming-laptop-with-nvidia-geforce-rtx-3060-is-currently-450-off/','https://cdn.redmondpie.com/wp-content/uploads/2022/03/Alienware-X17-Deal-1.jpg',cast('2022-03-04T11:49:42Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','ExtremeTech','Josh Norem','PCI Express Gen 5 Power Connector Leaks, Offers up to 600W','It’s no secret that the latest graphics cards from AMD and especially Nvidia are power-hungry beasts. All indications are the next-gen GPUs will be even hungrier. With rumors that both companies are looking to almost double their cards’ power requirements for…','It’s no secret that the latest graphics cards from AMD and especially Nvidia are power-hungry beasts. All indications are the next-gen GPUs will be even hungrier. With rumors that both companies are … [+3154 chars]','https://www.extremetech.com/gaming/332345-pci-express-gen-5-power-connector-leaks-offers-up-to-600w','https://www.extremetech.com/wp-content/uploads/2022/03/71BumJdsdEL._AC_SL1500_-640x360.jpg',cast('2022-03-04T15:54:06Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Creative Bloq','Rachel Watts, Ian Dean','The best laptops for gaming in 2022','Our picks of the best laptops for gaming, from portable powerhouses to budget builds.','Hunting for the best laptops for gaming can be a little overwhelming. PC hardware is constantly developing meaning that getting a grip on all that PC jargon can be exhausting. But we"re here to help … [+7598 chars]','https://www.creativebloq.com/buying-guides/best-gaming-laptops','https://cdn.mos.cms.futurecdn.net/JdREaxfd4A4umqVvDsUFg6-1200-80.jpg',cast('2022-03-04T14:42:21Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','9to5google.com','Andrew Romero','Bandwidth: Amazon Luna adds Twitch livestreaming, Microsoft Flight Simulator takes to the cloud','This week, all the stars have aligned to bring tons of new games and features to the cloud gaming scene, whether that’s NVIDIA GeForce Now, Amazon’s Luna, or Xbox Cloud Gaming. In fact, Amazon Luna is finally available to everyone within the US with a fair pr…','This week, all the stars have aligned to bring tons of new games and features to the cloud gaming scene, whether that’s NVIDIA GeForce Now, Amazon’s Luna, or Xbox Cloud Gaming. In fact, Amazon Luna i… [+5387 chars]','https://9to5google.com/2022/03/04/bandwidth-amazon-luna-adds-twitch-livestreaming-microsoft-flight-simulator-takes-to-the-cloud/','https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2022/03/bandwidth-luna.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1',cast('2022-03-04T21:05:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Theregister.com','Agam Shah','Here"s why prolonged Russia-Ukraine war would be really bad for us, say chip designers','Our R&D is in an occupied nation, Corsair warns investors
+
+While the top chip and hardware makers may have moved to minimize the impact of Russia"s war against Ukraine on their operations, smaller companies are mapping out their worse-case scenarios arising fr…','While the top chip and hardware makers may have moved to minimize the impact of Russia"s war against Ukraine on their operations, smaller companies are mapping out their worse-case scenarios arising … [+6131 chars]','https://www.theregister.com/2022/03/04/chipmakers_ukraine_supplies/','https://regmedia.co.uk/2022/03/04/shutterstock_ukraine_russia.jpg',cast('2022-03-04T05:14:09Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Securityweek.com','Ionut Arghire','Credentials of 71,000 NVIDIA Employees Leaked Following Cyberattack','The email addresses and passwords of more than 71,000 NVIDIA employees were likely stolen in a recent cyberattack and are now circulating within underground communities.
+
+On February 23, hackers managed to compromise NVIDIA’s network and steal not only employe…','The email addresses and passwords of more than 71,000 NVIDIA employees were likely stolen in a recent cyberattack and are now circulating within underground communities.
+
+On February 23, hackers mana… [+1395 chars]','https://www.securityweek.com/credentials-71000-nvidia-employees-leaked-following-cyberattack',null,cast('2022-03-04T12:39:02Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Ozbargain.com.au','VintageMars87','Gigabyte GeForce RTX 3070 Ti Vision OC 8GB Graphics Card $1329 Delivered @ Amazon AU','Brand GIGABYTE
+
+Graphics coprocessor NVIDIA GeForce RTX 3070 Ti
+
+Chipset Brand NVIDIA
+
+Graphics RAM type GDDR6X
+
+Graphics RAM size 8 GB','Can get the Aorus Master for 1299. Unless you must have a white gpu, this is way better.
+
+https://www.shoppingexpress.com.au/buy/gigabyte-aorus-geforc...
+
+Either way I would say to hold, if the top m… [+65 chars]','https://www.ozbargain.com.au/node/686607','https://files.ozbargain.com.au/n/07/686607x.jpg?h=6fe2e59c',cast('2022-03-04T07:54:25Z' as TIMESTAMP));
+, parameters: None
+[2022-03-21 16:48:12,929] {dbapi.py:186} INFO - Rows affected: 1
+[2022-03-21 16:48:12,949] {python.py:118} INFO - Done. Returned value was: None
+[2022-03-21 16:48:13,005] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=write_to_postgres, execution_date=20220304T000000, start_date=20220321T164812, end_date=20220321T164813
+[2022-03-21 16:48:13,062] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-03-21 16:48:13,108] {local_task_job.py:146} INFO - Task exited with return code 0

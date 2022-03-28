@@ -1,0 +1,171 @@
+[2022-03-21 16:43:53,954] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-20T00:00:00+00:00 [queued]>
+[2022-03-21 16:43:53,997] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-20T00:00:00+00:00 [queued]>
+[2022-03-21 16:43:53,998] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 16:43:53,998] {taskinstance.py:1043} INFO - Starting attempt 9 of 9
+[2022-03-21 16:43:53,998] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 16:43:54,187] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): write_to_postgres> on 2022-03-20T00:00:00+00:00
+[2022-03-21 16:43:54,203] {standard_task_runner.py:52} INFO - Started process 144 to run task
+[2022-03-21 16:43:54,229] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'write_to_postgres', '2022-03-20T00:00:00+00:00', '--job-id', '678', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmp6po3r68u', '--error-file', '/tmp/tmph30fotzh']
+[2022-03-21 16:43:54,229] {standard_task_runner.py:77} INFO - Job 678: Subtask write_to_postgres
+[2022-03-21 16:43:54,596] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.write_to_postgres 2022-03-20T00:00:00+00:00 [running]> on host dd6a275532f2
+[2022-03-21 16:43:54,766] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=write_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-20T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-20T00:00:00+00:00
+[2022-03-21 16:43:54,832] {base.py:74} INFO - Using connection to: id: news_in. Host: postgres, Port: 5432, Schema: , Login: airflow, Password: XXXXXXXX, extra: None
+[2022-03-21 16:43:54,863] {dbapi.py:180} INFO - Running statement: delete from NEWS.NEWS_COMPANY where cast('{delete_date}' as DATE) = cast(PUBLISH_DATE as DATE)
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Slashdot.org','EditorDavid','More Apple M1 Ultra Benchmarks Show It Doesn"t Beat the Best GPUs from Nvidia and AMD','Tom"s Guide tested a Mac Studio workstation equipped with an M1 Ultra with the Geekbench 5.4 CPU benchmarks "to get a sense of how effectively it handles single-core and multi-core workflows." 
+
+
+
+"Since our M1 Ultra is the best you can buy (at a rough price of…','Tom"s Guide tested a Mac Studio workstation equipped with an M1 Ultra with the Geekbench 5.4 CPU benchmarks "to get a sense of how effectively it handles single-core and multi-core workflows.""Since … [+3315 chars]','https://hardware.slashdot.org/story/22/03/19/2031214/more-apple-m1-ultra-benchmarks-show-it-doesnt-beat-the-best-gpus-from-nvidia-and-amd','https://a.fsdn.com/sd/topics/graphics_64.png',cast('2022-03-20T01:34:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','DIYphotography','John Aldred','New Google Chrome extension helps you spot fake photos with 99.29% accuracy','With the rise in AI-generated imagery lately, creating fake images, even very realistic looking human faces is become more widespread and readily available than ever – especially thanks to services like This Person Does Not Exist – which uses NVIDIA tech that…','With the rise in AI-generated imagery lately, creating fake images, even very realistic looking human faces is become more widespread and readily available than ever especially thanks to services lik… [+2058 chars]','https://www.diyphotography.net/new-google-chrome-extension-helps-you-spot-fake-photos-with-99-29-accuracy/','https://www.diyphotography.net/wp-content/uploads/2022/03/real-or-fake.jpg',cast('2022-03-20T17:53:10Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Yahoo Entertainment','Alan Farley','Take Aggressive NVIDIA Profits','The chip giant posted outstanding gains last week, lifting more than 25% to a four-week high.','NVIDIA Corp. (NVDA) posted outstanding gains last week, lifting more than 25% to a four-week high. The turnaround erupted at the 200-day moving average, raising hopes for a sustained bottom and end o… [+2441 chars]','https://finance.yahoo.com/news/aggressive-nvidia-profits-123803446.html','https://s.yimg.com/uu/api/res/1.2/E2QzVwMH5qsl3y_.4i8Eww--~B/aD00MTA7dz02MTU7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/fx_empire_176/174370bc9041e041d0fc57559bd65270',cast('2022-03-20T12:38:03Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Justcreative.com','Jacob Cass','15+ Best Desktop Computers for Video Editing in 2022','Looking for the best computer for video editing? Look no further. Today, we look at the best video editing computers, for all budget ranges and skill levels.','Looking for the best computer for video editing? This buying guide will help you choose the right one for your video editing needs whether that be motion graphics, animation or stop motion.
+
+Today, w… [+30356 chars]','https://justcreative.com/best-video-editing-computers/','https://justcreative.com/wp-content/uploads/2019/06/best-video-editing-computers.jpg',cast('2022-03-20T03:48:32Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Travis Hoium)','Just One More Reason to Be Bullish on Apple Stock','Apple"s latest development gives it even greater competitive advantage.','The news of Apple"s ( AAPL 2.09% ) latest development could cause considerable industry disruption. In this clip from "The Virtual Opportunities Show" on Motley Fool Live, recorded on March 15, Motle… [+2701 chars]','https://www.fool.com/investing/2022/03/20/just-one-more-reason-to-be-bullish-on-apple-stock/','https://g.foolcdn.com/editorial/images/671177/gettyimages-1319763415.jpg',cast('2022-03-20T12:00:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','XDA Developers','Karthik Iyer','AMD Ryzen 9 6900HX Review: Can Ryzen 6000 series CPU beat Intel Alder Lake?','Intel created huge waves in the industry with the launch of its 12th-gen Alder Lake CPUs, but AMD isn’t giving up just yet. The AMD Ryzen 6900HX represents the best of what AMD has to offer in terms of the performance with new Ryzen 6000 series chips. This 45…','Intel created huge waves in the industry with the launch of its 12th-gen Alder Lake CPUs, but AMD isn’t giving up just yet. The AMD Ryzen 6900HX represents the best of what AMD has to offer in terms … [+17952 chars]','https://www.xda-developers.com/asus-rog-strix-g15-review/','https://www.xda-developers.com/files/2022/03/ASUS-ROG-Strix-G15-2022-featured-1.jpg',cast('2022-03-20T15:00:54Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Neowin','work@buria.me (Taras Buria)','Two years after Chrome and Edge, Firefox is getting AV1 hardware acceleration','In 2020, Microsoft and Google equipped their browsers with hardware acceleration for the AV1 video support. Two years later, Mozilla is finally catching up with the same capability in Firefox. Read more...','According to an update made to a post on Bugzilla, The Mozilla Foundation is finally ready to add hardware acceleration for the AV1 video format. Developers plan to implement improved AV1 support in … [+1751 chars]','https://www.neowin.net/news/two-years-after-chrome-and-edge-firefox-is-getting-av1-hardware-acceleration/','https://cdn.neow.in/news/images/uploaded/2022/03/1647772028_firefox_av1_story.jpg',cast('2022-03-20T11:38:01Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Neowin','sen92sayan@gmail.com (Sayan Sen)','Here are the best graphics cards for 1080p gaming in 2022 (Part 1)','As GPU prices begin to settle slowly creeping back to their MSRP levels, we look at the best graphics card purchases to make across a wide variety of refresh rates for those that game at 1080p. Read more...','For the longest time, it has been near impossible to purchase graphics cards at fair market prices. A variety of factors like the global chip shortage, cryptocurrency mining, among others, has contri… [+5212 chars]','https://www.neowin.net/news/here-are-the-best-graphics-cards-for-1080p-gaming-in-2022-part-1/','https://cdn.neow.in/news/images/uploaded/2022/03/1647696996_msi_graphics_cards_2_story.jpg',cast('2022-03-20T16:32:01Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','SamMobile','Asif S.','Samsung’s Chromebooks could soon support variable refresh rates','A few days ago, Google announced support for Steam on ChromeOS. It’s the most popular game distribution platform for PC games, and it’s now coming to ChromeOS devices, albeit in a beta form for now. In line with that announcement, Google appears to be working…','A few days ago, Google announced support for Steam on ChromeOS. It’s the most popular game distribution platform for PC games, and it’s now coming to ChromeOS devices, albeit in a beta form for now. … [+1459 chars]','https://www.sammobile.com/news/samsung-chromebooks-support-variable-refresh-rates/','https://www.sammobile.com/wp-content/uploads/2021/02/Samsung-Galaxy-Chromebook-Fiesta-Red.jpg-720x405.png',cast('2022-03-20T11:18:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Gizchina.com','Marco Lancaster','Nvidia MX570 to boast the same video codec as RXT 2050','NVIDIA has just unveiled the NVIDIA MX150, 250, 350, 450 four-generation MX series graphics cards, all without NVENC / NVDEC video codec units. The info ...
+
+The post Nvidia MX570 to boast the same video codec as RXT 2050 appeared first on Gizchina.com.','NVIDIA has just unveiled the NVIDIA MX150, 250, 350, 450 four-generation MX series graphics cards, all without NVENC / NVDEC video codec units. The info comes straight from industry insiders “Golden … [+2483 chars]','https://www.gizchina.com/2022/03/20/nvidia-mx570-to-boast-the-same-video-codec-as-rxt-2050/','https://www.gizchina.com/wp-content/uploads/images/2022/03/imagem_2022-03-20_170513.png',cast('2022-03-20T20:06:16Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Ozbargain.com.au','danm02','Lenovo Legion 5i Gen 6 (i7-11600H, RTX 3060 6GB, 15.6" WQHD 165Hz, 16GB RAM, 512GB SDD) $1799.20 Delivered @ Lenovo eBay','Specifications
+
+
+
+Battery: Integrated 80Wh
+
+Bluetooth: Bluetooth® 5.0 or above
+
+Display: 15.6" WQHD (2560x1440) IPS 300nits Anti-glare, 165Hz, 100% sRGB, Dolby Vision, G-Sync, DC dimmer
+
+Finger Print Reader: No Fingerprint Reader
+
+Graphics: NVIDIA® GeForce RTX™ 306…','Specifications
+
+Battery: Integrated 80WhBluetooth: Bluetooth® 5.0 or aboveDisplay: 15.6" WQHD (2560x1440) IPS 300nits Anti-glare, 165Hz, 100% sRGB, Dolby Vision, G-Sync, DC dimmerFinger Print Reader:… [+403 chars]','https://www.ozbargain.com.au/node/689775','https://files.ozbargain.com.au/n/75/689775.jpg?h=969201dc',cast('2022-03-20T13:19:39Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Levelup.com','Ulises Contreras','Empleados de almacén ruso roban casi $38,000 USD en tarjetas gráficas','Editorial: Gaming / Facebook / Twitter / YouTube / Instagram / Noticias / Discord / Foros / Telegram / WhatsApp
+
+Continuar leyendo »','Editorial: Gaming / Facebook / Twitter / YouTube / Instagram / Noticias / Discord / Foros / Telegram / WhatsApp
+
+En protesta contra la actual invasión a Ucrania, AMD y NVIDIA dejaron de enviar sus pr… [+1940 chars]','https://www.levelup.com/noticias/667270/Empleados-de-almacen-ruso-roban-casi-38000-USD-en-tarjetas-graficas','https://cl.buscafs.com/www.levelup.com/public/uploads/images/732709/732709_600x315.jpg',cast('2022-03-20T17:32:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TweakTown','Anthony Garreffa','Russian warehouse staffers busted in GPU heist: 20 x RTX 3070 Ti cards','Warehouse workers at Russian company "Wildberries" tried to steal up to 20 x GeForce RTX 3070 Ti cards, busted in GPU heist. Continue reading at TweakTown >','Uh, so there are some warehouse workers that are in some serious trouble: staffers at Russian company "Wildberries" tried to steal 20 x GeForce RTX 3070 Ti graphics cards... but they were busted.
+
+Li… [+815 chars]','https://www.tweaktown.com/news/85166/russian-warehouse-staffers-busted-in-gpu-heist-20-rtx-3070-ti-cards/index.html','https://static.tweaktown.com/news/8/5/85166_01_russian-warehouse-staffers-busted-in-gpu-heist-20-rtx-3070-ti-cards_full.jpg',cast('2022-03-20T23:26:20Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Ozbargain.com.au','taimou','Foxtel Go Ultimate $49p/m for 12 months and Foxtel Go Box for $29 from Koogan (plus shipping unless you have Koogan first)','Toofa on currently, not sure if it"s just Foxtel in it"s death throws but currently really good value (for Foxtel at least)
+
+
+
+For me Iv"e missed the History channel bad since I kicked Foxtel to the curb years ago, plus it"s Footy season!!!!
+
+
+
+Foxtel Go streamin…','Toofa on currently, not sure if it"s just Foxtel in it"s death throws but currently really good value (for Foxtel at least)
+
+For me Iv"e missed the History channel bad since I kicked Foxtel to the cu… [+1343 chars]','https://www.ozbargain.com.au/node/689758','https://files.ozbargain.com.au/n/58/689758l.jpg?h=572f4de5',cast('2022-03-20T11:17:19Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Hotukdeals.com','Frank30uk','119° - HP Omen (Core i5-11400F / 16GB Ram / 256GB SSD / GTX 3060) £864.96 - £789.96 with code (Select accounts) @ buyitdirectdiscounts / Ebay','Credit to <a href="https://www.hotukdeals.com/profile/sisqoboy" target="_blank">@sisqoboy</a> for the initial find. Discovered you can now order it for under £800 using the code <strong>VIP20</strong> at checkout.<br /><br />Power and performance for a premiu…','Credit to @sisqoboy for the initial find. Discovered you can now order it for under £800 using the code VIP20 at checkout.Power and performance for a premium entertainment, gaming and multitasking ex… [+2355 chars]','https://www.hotukdeals.com/deals/hp-omen-gt12-1011na-pc-core-i5-11400f-16gb-ram-256gb-ssd-2tb-hdd-rtx-3060-win10-ps78996-with-code-at-buyitdirectdiscounts-ebay-3907463','https://images.hotukdeals.com/threads/raw/5E7ss/3907463_1/re/1024x1024/qt/60/3907463_1.jpg',cast('2022-03-20T18:56:08Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Wccftech','Alessio Palumbo','Overwatch 2 Closed Beta Begins on April 26th; Early PC Specs Unveiled','The Overwatch 2 Closed Beta is officially set to begin on April 26th, Blizzard Entertainment revealed on Friday. The developers have also confirmed additional details, such as the requirement to own the first game to be eligible for the first Closed Beta even…','The Overwatch 2 Closed Beta is officially set to begin on April 26th, Blizzard Entertainment revealed on Friday. The developers have also confirmed additional details, such as the requirement to own … [+2116 chars]','https://wccftech.com/overwatch-2-closed-beta-begins-on-april-26th-early-pc-specs-unveiled/','https://cdn.wccftech.com/wp-content/uploads/2022/03/overwatch_2_beta-HD-scaled.jpg',cast('2022-03-20T12:53:28Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Next Big Future','Brian Wang','Car Chip Shortage to 2024 and Tesla Mostly Immune','I, Brian Wang, have researched the car chip shortage. Many people have said that the car chip shortage will clear up by the second half of 2022 but they are wrong. The car chip shortage will last...
+
+
+
+[[ This is a content summary only. Visit my website for ful…','I, Brian Wang, have researched the car chip shortage. Many people have said that the car chip shortage will clear up by the second half of 2022 but they are wrong. The car chip shortage will last unt… [+5122 chars]','https://www.nextbigfuture.com/2022/03/car-chip-shortage-to-2024-and-tesla-mostly-immune.html','https://nextbigfuture.s3.amazonaws.com/uploads/2022/03/carchips.jpeg',cast('2022-03-20T01:44:49Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Seeking Alpha','Wall Street Breakfast','Wall Street Breakfast: The Week Ahead','Listen on the go! A daily podcast of Wall Street Breakfast will be available by 8:00 a.m. on Seeking Alpha, iTunes, Stitcher and Spotify.','Listen on the go! A daily podcast of Wall Street Breakfast will be available by 8:00 a.m. on Seeking Alpha, iTunes, Stitcher and Spotify.
+
+Economic reports in the week ahead
+
+ A couple of crucial rea… [+6113 chars]','https://seekingalpha.com/article/4496658-wall-street-breakfast-week-ahead','https://static.seekingalpha.com/assets/og_image_1200-29b2bfe1a595477db6826bd2126c63ac2091efb7ec76347a8e7f81ba17e3de6c.png',cast('2022-03-20T10:35:15Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Nationalcybersecurity.com','Angela Dennis','Lapsus$ hack leaves NVIDIA in a tight spot | #cybersecurity | #cyberattack | #cybersecurity | #infosecurity | #hacker','World Largest Source Of Security News.','According to an IBM report, ransomware was the top attack type (again) in 2021. Recently, NVIDIA confirmed the hack attack that compromised their internal systems. The infamous hacker group Lapsus$ c… [+3614 chars]','https://nationalcybersecurity.com/lapsus-hack-leaves-nvidia-in-a-tight-spot-cybersecurity-cyberattack-cybersecurity-infosecurity-hacker/','https://nationalcybersecurity.com/wp-content/uploads/lap-b_11zon.jpg',cast('2022-03-20T08:01:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Yahoo Entertainment','Jose Karlo Mari Tottoc','10 Cheap Stocks Hedge Funds Are Talking About','In this article, we discuss 10 cheap stocks hedge funds are talking about. You can skip our comprehensive analysis of the financial markets today and go...','In this article, we discuss 10 cheap stocks hedge funds are talking about. You can skip our comprehensive analysis of the financial markets today and go directly to 5 Cheap Stocks Hedge Funds Are Tal… [+13099 chars]','https://finance.yahoo.com/news/10-cheap-stocks-hedge-funds-141946036.html','https://s.yimg.com/uu/api/res/1.2/xWFJUoUWT8NizlK99j4iVw--~B/aD00OTY7dz03NTA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/insidermonkey.com/5b979a94d337796b122d3138bb983a21',cast('2022-03-20T14:19:46Z' as TIMESTAMP));
+, parameters: None
+[2022-03-21 16:43:54,872] {taskinstance.py:1455} ERROR - syntax error at or near "insert"
+LINE 3: insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, ...
+        ^
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 117, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 128, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fetch_news.py", line 52, in _execute_query_with_hook
+    hook.run(sql=seq)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/hooks/dbapi.py", line 184, in run
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "insert"
+LINE 3: insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, ...
+        ^
+
+[2022-03-21 16:43:54,880] {taskinstance.py:1503} INFO - Marking task as FAILED. dag_id=fetch_news, task_id=write_to_postgres, execution_date=20220320T000000, start_date=20220321T164353, end_date=20220321T164354
+[2022-03-21 16:43:54,966] {local_task_job.py:146} INFO - Task exited with return code 1

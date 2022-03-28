@@ -1,0 +1,164 @@
+[2022-03-21 16:48:14,558] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-07T00:00:00+00:00 [queued]>
+[2022-03-21 16:48:14,609] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-07T00:00:00+00:00 [queued]>
+[2022-03-21 16:48:14,610] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 16:48:14,610] {taskinstance.py:1043} INFO - Starting attempt 5 of 5
+[2022-03-21 16:48:14,610] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 16:48:14,659] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): write_to_postgres> on 2022-03-07T00:00:00+00:00
+[2022-03-21 16:48:14,671] {standard_task_runner.py:52} INFO - Started process 354 to run task
+[2022-03-21 16:48:14,684] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'write_to_postgres', '2022-03-07T00:00:00+00:00', '--job-id', '759', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmp25a46_dt', '--error-file', '/tmp/tmphwqd4fvx']
+[2022-03-21 16:48:14,687] {standard_task_runner.py:77} INFO - Job 759: Subtask write_to_postgres
+[2022-03-21 16:48:14,795] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.write_to_postgres 2022-03-07T00:00:00+00:00 [running]> on host dd6a275532f2
+[2022-03-21 16:48:14,907] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=write_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-07T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-07T00:00:00+00:00
+[2022-03-21 16:48:14,946] {base.py:74} INFO - Using connection to: id: news_in. Host: postgres, Port: 5432, Schema: , Login: airflow, Password: XXXXXXXX, extra: None
+[2022-03-21 16:48:14,960] {dbapi.py:180} INFO - Running statement: delete from NEWS.NEWS_COMPANY where cast('2022-03-07' as DATE) = cast(PUBLISH_DATE as DATE);
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Insurance Business UK','Lyle Adriano','Hackers allegedly leak 190GB of data from Samsung - Insurance Business','<ol><li>Hackers allegedly leak 190GB of data from Samsung  Insurance Business
+
+</li><li>Nvidia hackers leak 190GB of sensitive data from Samsung  TechSpot
+
+</li><li>Hackers leak 190GB of data taken in alleged Samsung breach  AppleInsider
+
+</li><li>Nvidia hack…','BleepingComputer reported that the stolen data supposedly on the cache include source code for every Trusted Applet (TA) installed in Samsung’s TrustZone platform; algorithms for biometric unlock fun… [+782 chars]','https://www.insurancebusinessmag.com/ca/news/cyber/hackers-allegedly-leak-190gb-of-data-from-samsung-397536.aspx','https://cdn-res.keymedia.com/cms/images/us/023/0270_637822449783866748.png',cast('2022-03-07T10:23:29Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Digital Trends','Zak Islam','Hackers are using stolen Nvidia certificates to hide malware','According to security researchers, Nvidia code-signing certificates that were extracted via a hack of the chip maker are being used for malware purposes.','Nvidia code-signing certificates that were extracted from a recent hack of the chip maker are being used for malware purposes, according to security researchers.
+
+Hacking group LAPSUS$ recently claim… [+3073 chars]','https://www.digitaltrends.com/computing/hackers-are-using-stolen-nvidia-certificates-to-hide-malware/','https://icdn.digitaltrends.com/image/digitaltrends/history-of-malware-feat.jpg',cast('2022-03-07T15:12:54Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Windows Central','Sean Endicott','Stolen NVIDIA data is being used to bypass Windows security','Threat actors are using stolen data from the NVIDIA hack to attack PCs.
+
+
+
+
+
+
+
+What you need to know
+
+
+
+
+
+A ransomware group known as Lapsus$ has leaked stolen data from NVIDIA as part of a hack.
+
+The leaked data includes code signing certificates, which are now bein…','The ongoing drama surrounding the NVIDIA hack by Lapsus$ has another chapter, and it"s putting computers at risk. The ransomware group known as Lapsus$ hacked NVIDIA in February 2022. The group threa… [+1330 chars]','https://www.windowscentral.com/leaked-nvidia-data-being-used-bypass-windows-security-and-attack-pcs','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2017/02/hp-spectre-15-nvidia.jpg',cast('2022-03-07T18:54:21Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Windows Central','Cale Hunt','Review: Acer"s Predator X28 4K gaming monitor is ideal for high-end PCs','Acer puts it all together with the 28-inch 4K Predator X28.
+
+
+
+As 4K UHD resolution becomes more common thanks to more powerful PC and console hardware, monitors must keep up. And while there have long been 4K displays on the market, those with high-end competi…','Source: Windows Central
+
+As 4K UHD resolution becomes more common thanks to more powerful PC and console hardware, monitors must keep up. And while there have long been 4K displays on the market, tho… [+12111 chars]','https://www.windowscentral.com/acer-predator-x28-review','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2022/03/acer-predator-x28-review-01.jpg',cast('2022-03-07T18:00:02Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','PetaPixel','Jaron Schneider','Hackers Breached Samsung Security and Stole Galaxy Source Code','Samsung has confirmed that hackers breached its data security and were able to steal Galaxy smartphone source code. The company says the cyberattack did not affect customer or employee information.
+
+[Read More]','Samsung has confirmed that hackers breached its data security and were able to steal Galaxy smartphone source code. The company says the cyberattack did not affect customer or employee information. 
+
+… [+2153 chars]','https://petapixel.com/2022/03/07/hackers-breached-samsung-security-and-stole-galaxy-source-code/','https://petapixel.com/assets/uploads/2022/03/Hackers-Breach-Samsung-Security-Steal-Galaxy-Source-Code.jpg',cast('2022-03-07T17:07:57Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Rich Smith)','Why Nvidia Stock Tanked Today','Goldman Sachs kind of likes Nvidia -- but can"t recommend buying it.','What happened
+
+Shares of Nvidia( NVDA -4.66% ) stock fell off a cliff Monday morning, tumbling 4% by noon ET. That"s actually a bit surprising though, given the news today:
+
+Goldman Sachs just reinit… [+1804 chars]','https://www.fool.com/investing/2022/03/07/why-nvidia-stock-tanked-today/','https://g.foolcdn.com/editorial/images/669377/white-arrow-declining-sharply-atop-a-stock-tickertape-display-bathed-in-red.jpg',cast('2022-03-07T17:32:17Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Theregister.com','Gareth Corfield','Lapsus$ extortionists dump data online as Samsung admits breach','190GB worth of internal files, looks like source code for proprietary tech including Knox, Bootloader and more
+
+Samsung has acknowledged its data was stolen after the Lapsus$ extortion gang deposited what appears to be 190GB of the company"s stolen internal fi…','Samsung has acknowledged its data was stolen after the Lapsus$ extortion gang deposited what appears to be 190GB of the company"s stolen internal files online.
+
+"We were recently made aware that ther… [+3719 chars]','https://www.theregister.com/2022/03/07/samsung_lapsus_data_theft/','https://regmedia.co.uk/2020/10/29/shutterstock_samsung_editorial_only.jpg',cast('2022-03-07T17:11:51Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','XDA Developers','Corbin Davenport','Samsung confirms hackers stole source code for Galaxy phones','Samsung often speaks highly of its security measures, especially around the Samsung Knox technology available on Galaxy devices and other products, but no company (or government) is immune to security breaches. Samsung confirmed on Monday that it suffered a s…','Samsung often speaks highly of its security measures, especially around the Samsung Knox technology available on Galaxy devices and other products, but no company (or government) is immune to securit… [+2875 chars]','https://www.xda-developers.com/samsung-hack-source-code-galaxy-phones/','https://www.xda-developers.com/files/2022/02/Samsung-Galaxy-S22-Plus-11.jpg',cast('2022-03-07T20:04:44Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','AppleInsider','news@appleinsider.com (Darryl Boxberger)','Comcast and Apple announce launch of Apple TV+ on Xfinity platforms','Comcast has announced that Apple TV+ will be launching on its Xfinity entertainment platform starting on March 7, 2022.In an announcement on Monday, Comcast and Apple announced that Apple TV+ will launch across its Xfinity X1, Xfinity Flex, and XClassTV set-t…','AppleInsider is supported by its audience and may earn commission as an Amazon Associate and affiliate partner on qualifying purchases. These affiliate partnerships do not influence our editorial con… [+1429 chars]','https://appleinsider.com/articles/22/03/07/comcast-and-apple-announce-launch-of-apple-tv-on-xfinity-platforms','https://photos5.appleinsider.com/gallery/45543-88636-000-lead-Comcast-Xfinity-xl.jpg',cast('2022-03-07T22:24:19Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','XDA Developers','João Carrasqueira','MSI launches Aegis ZS desktop with AMD processors and GPUs','MSI has announced a new addition to its lineup of gaming desktop PCs, the all-AMD Aegis ZS. This new member of the Aegis family is powered by AMD processors and GPUs, so it might be a great choice if you want to avoid Intel and NVIDIA for whatever reason. You…','MSI has announced a new addition to its lineup of gaming desktop PCs, the all-AMD Aegis ZS. This new member of the Aegis family is powered by AMD processors and GPUs, so it might be a great choice if… [+1969 chars]','https://www.xda-developers.com/msi-aegis-zs-all-amd/','https://www.xda-developers.com/files/2022/03/MSI-Aegis-ZS-colored-background.jpg',cast('2022-03-07T15:40:01Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Windows Central','John Levite','Get a 240Hz refresh rate with Dell"s gaming monitor on sale for just $210','Dell"s S2522HG 24.5-inch 240Hz gaming monitor has dropped to a low price of just $209.99 through Amazon. This is a really good deal. Not only is it the lowest price we"ve ever seen for this display, we"re talking about a monitor that regularly sells for aroun…','Dell"s S2522HG 24.5-inch 240Hz gaming monitor has dropped to a low price of just $209.99 through Amazon. This is a really good deal. Not only is it the lowest price we"ve ever seen for this display, … [+1648 chars]','https://www.windowscentral.com/dell-s2522hg-24-inch-240hz-gaming-monitor-amazon-sale','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2022/03/dell-245-inch-240hz-monitor.jpg',cast('2022-03-07T13:00:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Rich Smith)','Why Are Qualcomm, Micron, and AMD Stocks Falling?','Analysts are saying "buy," but investors aren"t listening today.','What happened
+
+Semiconductor stocks tumbled in afternoon trading Monday. By close of trading, Qualcomm (NASDAQ:QCOM) stock lost 7.5% and Micron Technology(NASDAQ:MU) was down 7.6%. Advanced Micro Dev… [+1945 chars]','https://www.fool.com/investing/2022/03/07/why-are-qualcomm-micron-and-amd-stocks-falling/','https://g.foolcdn.com/editorial/images/669432/3-stock-arrows-trending-down-against-a-cityscape-and-global-map-background.jpg',cast('2022-03-07T23:29:52Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Threatpost','Becky Bracken','Samsung Confirms Lapsus$ Ransomware Hit, Source Code Leak','The move comes just a week after GPU-maker NVIDIA was hit by Lapsus$ and every employee credential was leaked.','The move comes just a week after GPU-maker NVIDIA was hit by Lapsus$ and every employee credential was leaked.Just days after leaking data it claims to have exfiltrated from chipmaker NVIDIA, ransomw… [+4614 chars]','https://threatpost.com/samsung-lapsus-ransomware-source-code/178791/','https://media.threatpost.com/wp-content/uploads/sites/103/2020/08/11102207/samsung-galaxy.jpg',cast('2022-03-07T19:28:36Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','PCWorld','Gordon Ung','The Full Nerd ep 208: Steam Deck reactions and Nvidia LHR malware','In this episode of The Full Nerd, Gordon Ung, Brad Chacos, and Adam Patrick Murray mull reactions to Valve’s Steam Deck, malware disguised as a tool to unlock fulling mining capabilities on Nvidia graphics cards, and a new chiplet standard.
+
+
+
+
+
+
+
+
+
+The initial V…','Skip to contentType your search and hit enter
+
+In this episode of The Full Nerd, Gordon Ung, Brad Chacos, and Adam Patrick Murray mull reactions to Valve’s Steam Deck, malware disguised as a tool to … [+2047 chars]','https://www.pcworld.com/article/620122/the-full-nerd-ep-208-steam-deck-reactions-lhr-malware-and-a-chiplet-standard.html','https://www.pcworld.com/wp-content/uploads/2022/03/TFN22_208_TFNep208_V1.jpg?quality=50&strip=all&w=1024',cast('2022-03-07T17:00:00Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Threatpost','Lisa Vaas','Nvidia’s Stolen Code-Signing Certs Used to Sign Malware','Nvidia certificates are being used to sign malware, enabling malicious programs to pose as legitimate and slide past security safeguards on Windows machines.','Nvidia certificates are being used to sign malware, enabling malicious programs to pose as legitimate and slide past security safeguards on Windows machines.Two of Nvidia’s code-signing certificates … [+5556 chars]','https://threatpost.com/nvidias-stolen-code-signing-certs-sign-malware/178784/','https://media.threatpost.com/wp-content/uploads/sites/103/2022/03/07124338/imposter-scaled-e1646675038217.jpeg',cast('2022-03-07T17:46:39Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Phoronix',null,'VDPAU 1.5 Video Decode Library Released With AV1 Support','With the NVIDIA 510 series Linux driver back in January NVIDIA added AV1 video decode support to their Video Decode and Presentation API for Unix (VDPAU) driver. Now finally out is libvdpau 1.5 as the adjoining open-source VDPAU library update...','With the NVIDIA 510 series Linux driver back in January NVIDIA added AV1 video decode support to their Video Decode and Presentation API for Unix (VDPAU) driver. Now finally out is libvdpau 1.5 as th… [+1065 chars]','https://www.phoronix.com/scan.php?page=news_item&px=libvdpau-1.5-VDPAU','https://www.phoronix.com/assets/categories/nvidia.jpg',cast('2022-03-07T10:44:41Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','TechRadar','Sead Fadilpašić','Nvidia hackers hit Samsung and leak huge data dump','If the data’s authenticity is confirmed, it could be a major headache for Samsung','The increasingly-notorious cybercrime group Lapsus$ has published a huge database, allegedly containing sensitive information from Samsung. 
+
+The leak, containing 190GB of data broken into three sepa… [+1773 chars]','https://www.techradar.com/news/nvidia-hackers-hit-samsung-and-leak-huge-data-dump','https://cdn.mos.cms.futurecdn.net/SEXM8ah9EKKpBKB22d7Ak3-1200-80.jpg',cast('2022-03-07T14:06:12Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Ubergizmo','Tyler Lee','Hackers Leak 190GB Of Data In Samsung Breach','So not too long ago, NVIDIA suffered a data breach and a lot of information was posted online, some of which seemed to suggest that NVIDIA could be working with Nintendo on a new chipset for a future Switch. Now it looks like Samsung is the second tech compan…','So not too long ago, NVIDIA suffered a data breach and a lot of information was posted online, some of which seemed to suggest that NVIDIA could be working with Nintendo on a new chipset for a future… [+1123 chars]','https://www.ubergizmo.com/2022/03/samsung-breach-190gb-data/','https://i0.wp.com/cdnssl.ubergizmo.com/wp-content/uploads/2019/10/hack-3.jpg',cast('2022-03-07T02:00:17Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Investor"s Business Daily','Investor"s Business Daily','Sector Wars: Tesla Stock Tumbles As Two Leaders Rise, One Gets Sold Into Strength','As Tesla, Nvidia struggle, CF gets sold into strength and Union Pacific, Vertex fight the market.','Tech stocks Tesla (TSLA), Microsoft (MSFT) and Nvidia (NVDA) have taken a hit since hitting highs at the end of last year. Meanwhile, CF Industries (CF), Cheniere Energy (LNG) and Union Pacific (UNP)… [+2371 chars]','https://www.investors.com/research/how-to-find-the-best-stocks-to-buy/tesla-stock-tumbles-as-two-leaders-rise-one-gets-sold-into-strength/','https://www.investors.com/wp-content/uploads/2022/03/Stock-stockmarketpiechart-01-adobe.jpg',cast('2022-03-07T21:20:04Z' as TIMESTAMP));
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','PC Gamer','Katie Wickens','Nvidia"s stolen data is being used to disguise malware as GPU drivers','Officially signed with Nvidia codes, RATs and Mimikatz are rife. Here are the signatures to look out for.','Because of leaked data linked to an Nvidia hack by a group calling itself Lapsus$, stolen code-signing certificates are being used to gain remote access to unsuspecting machines, and otherwise deploy… [+2619 chars]','https://www.pcgamer.com/nvidias-stolen-data-is-being-used-to-disguise-malware-as-gpu-drivers/','https://cdn.mos.cms.futurecdn.net/CvxHTxvrgEJNP5YbxpHhoh-1200-80.jpg',cast('2022-03-07T13:15:14Z' as TIMESTAMP));
+, parameters: None
+[2022-03-21 16:48:14,966] {dbapi.py:186} INFO - Rows affected: 1
+[2022-03-21 16:48:14,987] {python.py:118} INFO - Done. Returned value was: None
+[2022-03-21 16:48:15,006] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=write_to_postgres, execution_date=20220307T000000, start_date=20220321T164814, end_date=20220321T164815
+[2022-03-21 16:48:15,104] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-03-21 16:48:15,125] {local_task_job.py:146} INFO - Task exited with return code 0

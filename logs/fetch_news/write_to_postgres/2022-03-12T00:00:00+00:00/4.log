@@ -1,0 +1,148 @@
+[2022-03-21 10:14:04,829] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-12T00:00:00+00:00 [queued]>
+[2022-03-21 10:14:05,000] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.write_to_postgres 2022-03-12T00:00:00+00:00 [queued]>
+[2022-03-21 10:14:05,002] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 10:14:05,003] {taskinstance.py:1043} INFO - Starting attempt 4 of 4
+[2022-03-21 10:14:05,003] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 10:14:05,074] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): write_to_postgres> on 2022-03-12T00:00:00+00:00
+[2022-03-21 10:14:05,086] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'write_to_postgres', '2022-03-12T00:00:00+00:00', '--job-id', '576', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmp2iwawfx7', '--error-file', '/tmp/tmp9c1krcm7']
+[2022-03-21 10:14:05,086] {standard_task_runner.py:77} INFO - Job 576: Subtask write_to_postgres
+[2022-03-21 10:14:05,080] {standard_task_runner.py:52} INFO - Started process 1357 to run task
+[2022-03-21 10:14:05,519] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.write_to_postgres 2022-03-12T00:00:00+00:00 [running]> on host e39215f0be5b
+[2022-03-21 10:14:05,757] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=write_to_postgres
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-12T00:00:00+00:00
+[2022-03-21 10:14:05,775] {base.py:74} INFO - Using connection to: id: news_in. Host: postgres, Port: 5432, Schema: , Login: airflow, Password: XXXXXXXX, extra: None
+[2022-03-21 10:14:05,793] {dbapi.py:180} INFO - Running statement: insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Engadget','Igor Bonifacic','Ubisoft says no user information was exposed in recent "cyber security incident"','South American hacking group Lapsus$ is claiming responsibility for another high-profile hack. On Thursday, Ubisoft said
+
+ it underwent a “cyber security incident” last week that saw some of its games, systems and services temporarily disrupted. At the time, …','South American hacking group Lapsus$ is claiming responsibility for another high-profile hack. On Thursday, Ubisoft said
+
+ it underwent a cyber security incident last week that saw some of its games,… [+1047 chars]','https://www.engadget.com/ubisoft-cyber-security-incident-lapsus-claims-credit-164942979.html','https://s.yimg.com/os/creatr-uploaded-images/2022-03/880bc2f0-a223-11ec-99de-3cb2a0d7e0b9','2022-03-12T16:49:42Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Android Police','Steve Huff','Nvidia and Samsung hackers take credit for Ubisoft attack','The game company says no personal info was exposed','Ubisoft may be the latest victim in a cybercrime spree that has already affected chipmaker Nvidia and South Korean electronics giant Samsung. As a result, the company had to take measures to reassure… [+1916 chars]','https://www.androidpolice.com/nvidia-and-samsung-hackers-take-credit-for-ubisoft-attack/','https://static1.anpoimages.com/wordpress/wp-content/uploads/2020/10/27/Ubisoft__Rebranding.jpg.jpg','2022-03-12T21:47:20Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Slashdot.org','EditorDavid','How China Built an Exascale Supercomputer Out of Old 14nm Tech','Slashdot reader katydid77 shares a report from the supercomputing site The Next Platform:
+
+If you need any proof that it doesn"t take the most advanced chip manufacturing processes to create an exascale-class supercomputer, you need look no further than the Su…','If you need any proof that it doesn"t take the most advanced chip manufacturing processes to create an exascale-class supercomputer, you need look no further than the Sunway "OceanLight" system house… [+2757 chars]','https://tech.slashdot.org/story/22/03/12/1843220/how-china-built-an-exascale-supercomputer-out-of-old-14nm-tech','https://a.fsdn.com/sd/topics/china_64.png','2022-03-12T20:34:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Brett Schafer)','Wall Street Loves These 3 Growth Stocks -- Should You?','Tesla, Nvidia, and Apple are investing favorites on Wall Street. But do they belong in your portfolio?','If you are an individual investor, it can be helpful to check what sentiment is from the big dogs on Wall Street from time to time. Luckily, tons of Wall Street analysts post their research publicly,… [+4629 chars]','https://www.fool.com/investing/2022/03/12/wall-street-loves-these-3-growth-stocks-should-you/','https://g.foolcdn.com/editorial/images/669932/thinking.jpg','2022-03-12T12:10:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Forbes','Davey Winder, Senior Contributor, 
+
+ Davey Winder, Senior Contributor
+
+ https://www.forbes.com/sites/daveywinder/','Threat Intel Report: Who Is Behind Staggering 190GB Samsung Galaxy Hack?','Who are the cybercriminals behind the massive NVIDIA and Samsung hack attacks?','Earlier this week I reported that Samsung had confirmed a data breach involving a criminal group that appears to have made off with some 190GB of code involving the flagship Galaxy series of smartpho… [+11567 chars]','https://www.forbes.com/sites/daveywinder/2022/03/12/threat-intel-report-who-is-behind-staggering-190gb-samsung-galaxy-hack/','https://imageio.forbes.com/specials-images/imageserve/622b25b761a15839b66f32c7/0x0.jpg?format=jpg&crop=3403,1913,x0,y106,safe&fit=crop','2022-03-12T13:00:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Keithen Drury)','3 Top Artificial Intelligence Stocks to Buy in March','Not just a buzzword, artificial intelligence is instrumental in the offerings of these companies.','Artificial intelligence (AI) is often used as a buzzword when companies are trying to sell their product. They often have some form of AI, but it really isn"t as much of a game-changer as it is hyped… [+5343 chars]','https://www.fool.com/investing/2022/03/12/3-top-artificial-intelligence-stocks-to-buy-in-mar/','https://g.foolcdn.com/editorial/images/669107/man-looking-at-an-ai-dashboard.jpg','2022-03-12T11:00:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Slickdeals.net','iconian','LG OLED TV"s + 4-Yr Accidental Warranty w/ Burn-in: 65" C1 + $150 Visa GC $1747, 77" C1 + $225 Visa GC $2797, 55" C1 + $70 GC $1247 + free s/h at Buydig','Update: This popular offer is still available now w/ slightly different prices/GC values. 
+
+ 
+
+BuyDig has select *LG 4K Smart OLED TV + VISA Gift Cards & 4-Yr Accidental Damage Warranty* on sale listed...','Update: This popular offer is still available now w/ slightly different prices/GC values.BuyDig has select LG 4K Smart OLED TV + VISA Gift Cards &amp; 4-Yr Accidental Damage Warranty on sale listed b… [+666 chars]','https://slickdeals.net/f/15653749-lg-oleds-w-4-year-accidental-warranty-65-lg-oled65c1pub-150-visa-gc-1747-2-5-sd-cashback-more-free-s-h','https://static.slickdealscdn.com/attachment/3/5/9/4/0/2/8/11266696.attach','2022-03-13T05:07:52Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Neowin','sen92sayan@gmail.com (Sayan Sen)','Nvidia next-gen Ada rumors run wild as RTX 4090 rumored to gobble 600W power all by itself','Nvidia"s next-gen RTX 4090, based on the Ada Lovelace architecture, is rumored to feature an insane 600W TGP according to recent reports, a massive jump up from what Nvidia currently has. Read more...','GeForce RTX 30 series
+
+Power consumption rumors surrounding Nvidia"s next-gen Ada Lovelace GPU architecture - the one that"s going to succeed the current Ampere-based RTX 3000 series - have struck, a… [+1269 chars]','https://www.neowin.net/news/nvidia-next-gen-ada-rumors-run-wild-as-rtx-4090-rumored-to-gobble-600w-power-all-by-itself/','https://cdn.neow.in/news/images/uploaded/2020/10/1601931739_geforce-rtx-30-series_story.jpg','2022-03-12T13:34:01Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Jose Najarro)','This Huge Semiconductor Company Just Reported Strong Growth','Based on this chip manufacturer"s recent revenue growth, the demand for semiconductors is still high.','Today"s video focuses on Taiwan Semiconductor Manufacturing Company ( TSM -2.45% ), its recent February revenue report, and an update on the current status of its 3 nm technology. TSM provides chips … [+1192 chars]','https://www.fool.com/investing/2022/03/13/this-huge-semiconductor-company-just-reported-stro/','https://g.foolcdn.com/editorial/images/670289/maxresdefault-3.jpg','2022-03-13T11:00:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','MSPoweruser','Sharron Bennet','Lenovo Yoga 7i Offers $300 Discount on Best Buy Top Deals','Yoga 7i is one of the most coveted laptops from Lenovo. It offers an excellent display, long battery life, and robust components. But here is the most giant magnet of this model: an incredible performance for an affordable price. Even more, it comes with a $3…','Samsung is one of the most trusted brands when it comes to televisions. The brand offers incredible features that set its TV models apart from others. One of them is the Samsung QN85A, an 85...
+
+TCL … [+2244 chars]','https://mspoweruser.com/lenovo-yoga-7i-offers-300-discount-on-best-buy-top-deals/','https://mspoweruser.com/wp-content/uploads/2022/03/7i1.jpg','2022-03-13T14:15:27Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Techviral.net','Farhan Shaikh','Nvidia GeForce RTX 4090 Graphics Card Leaked Online','Nvidia’s next flagship GPU, RTX 4090, details have been leaked online. According to the latest rumors, the RTX 4090 GPU might come with faster GDRR7 memory. A YouTube channel, Moore’s Law Is Dead (MLID), the upcoming RTX 4090 GPU with AD102 chip might be the …','Nvidias next flagship GPU, RTX 4090, details have been leaked online. According to the latest rumors, the RTX 4090 GPU might come with faster GDRR7 memory.
+
+A YouTube channel, Moores Law Is Dead (MLI… [+1608 chars]','https://techviral.net/nvidia-geforce-rtx-4090-graphics-card/','https://techviral.net/wp-content/uploads/2022/03/RTX-4090-Might-Twice-As-Fast-As-RTX-3090.jpg','2022-03-12T18:37:30Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Techviral.net','Himanshu Panchal','After Samsung and Nvidia, Ubisoft Got a Cyberattack by LAPSUS$','Ubisoft is best known for its Assassin’s Creed, Far Cry, Tom Clancy’s Rainbow Six Siege, Prince of Persia, and Watch Dogs series. Ubisoft was 2nd largest video game publisher in the world as of 2017. Last week, Ubisoft experienced a Cyberattack incident that …','Ubisoft is best known for its Assassins Creed, Far Cry, Tom Clancys Rainbow Six Siege, Prince of Persia, and Watch Dogs series. Ubisoft was 2nd largest video game publisher in the world as of 2017.
+
+… [+1858 chars]','https://techviral.net/ubisoft-got-a-cyberattack/','https://techviral.net/wp-content/uploads/2022/03/Ubisoft-Got-a-Cyberattack-By-Same-Hacker-Group-Which-Targeted-Samsung-and-Nvidia-1.jpg','2022-03-13T14:34:04Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','XDA Developers','Rich Woods','HP Spectre x360 16 review: It’s a lot of computer, but it’s awesome','If you’re looking for a big-screen convertible, the HP Spectre x360 16 is hands down your best option. And I’m not just saying that because big-screen convertibles are incredibly rare. Indeed, Dell made an XPS 15 2-in-1 once…once. With this year’s Spectre x36…','If you’re looking for a big-screen convertible, the HP Spectre x360 16 is hands down your best option. And I’m not just saying that because big-screen convertibles are incredibly rare. Indeed, Dell m… [+14046 chars]','https://www.xda-developers.com/hp-spectre-x360-16-review/','https://www.xda-developers.com/files/2022/02/HP-Spectre-x360-16-1.jpg','2022-03-12T16:00:51Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Fc2.com','北森八雲','GeForce RTX 4090（仮称）クラスの次世代GPUはTGPが600Wに達する','NVIDIA GeForce RTX 4090-class GPU with 600W TGP has reportedly been confirmed（VideoCardz）NVIDIA GeForce RTX 4090 ‘Ada Lovelace’ GPUs Rocks Up To 600W TGP, Ti Variant Over 800W, Rumor Alleges（WCCF Tech）Someone told me the xx90 with 600W TGP has been confirmed.…','Someone told me the xx90 with 600W TGP has been confirmed. I think it"s too early to talk about it.
+
+— kopite7kimi (@kopite7kimi) March 12, 2022
+
+Greymon55
+
+GeForce RTX 4080450WGeForce RTX 4090600WGe… [+797 chars]','https://northwood.blog.fc2.com/blog-entry-11285.html',null,'2022-03-13T09:39:32Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','CTech',null,'"High-tech companies need to take into account the language difficulties of Arab candidates" | Ctech - CTech','This is what Ali Ayoub, Senior Director at Nvidia and a serial entrepreneur, said at a panel on high-tech and entrepreneurship at the Arab Economic Forum in collaboration with Calcalist; Entrepreneur Khalil Shawahna: "Only 3% of high-tech employees are Arabs"…','"Only about 3% of all high-tech employees are Arabs, and out of 10,000 start-ups in Israel, only about 100 are from Arab entrepreneurs," said Khalil Shawahna, an entrepreneur from Sakhnin, who chaire… [+2751 chars]','https://www.calcalistech.com/ctechnews/article/hyencio11c','https://images1.calcalist.co.il/picserver3/crop_images/2022/03/12/rJOx0N511c/rJOx0N511c_0_90_2500_1408_0_large.jpg','2022-03-13T12:39:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Thewindowsclub.com','Obinna@TWC','Fix NVIDIA GeForce Experience overlay not working on Windows PC','Normally, on your Windows 11 or Windows 10 gaming computer, pressing the Alt+Z key combo will bring up your NVIDIA GeForce Experience overlay. Some PC users are reporting the issue of NVIDIA GeForce overlay not working on games on their gaming device. In this…','Normally, on your Windows 11 or Windows 10 gaming computer, pressing the Alt+Z key combo will bring up your NVIDIA GeForce Experience overlay. Some PC users are reporting the issue of NVIDIA GeForce … [+9044 chars]','https://www.thewindowsclub.com/nvidia-geforce-experience-overlay-not-working','https://www.thewindowsclub.com/wp-content/uploads/2022/03/NVIDIA-GeForce-Experience-overlay-not-working.jpg','2022-03-13T02:02:05Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Creative Bloq','jessica.weatherbed@futurenet.com (Jess Weatherbed)','The best laptops for battery life in {year}','Our pick of the best laptops for battery life for creative professionals and students.','The best laptops for battery life are becoming more important than ever due to the rise in hybrid working and education. At one moment, you could be working at home or in a studio or lecture hall, an… [+8424 chars]','https://www.creativebloq.com/buying-guides/best-laptops-for-battery-life','https://cdn.mos.cms.futurecdn.net/N3YD5FGp5sRFwwgaUMQh6H-1200-80.jpg','2022-03-12T13:18:57Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Ozbargain.com.au','bargainsgrabber','Razer Blade 14 14 165hz QHD Matte Display AMD Ryzen 9 5900HX RTX 3080 8GB VRAM/ 16GB RAM/ 1TB PCIeSSD $3399 Delivered @Amazon AU','3 stock left at time of posting (more on the way)
+
+Amazon just released this on their website 4 days ago per 3x camel, still showing RRP $4999 at most places. Not worth paying full price imo
+
+
+
+Features & details
+
+* 14 Inch QHD 165Hz (2560 x 1440) Display
+
+* AMD R…','3 stock left at time of posting (more on the way)Amazon just released this on their website 4 days ago per 3x camel, still showing RRP $4999 at most places. Not worth paying full price imo
+
+Features … [+906 chars]','https://www.ozbargain.com.au/node/688332','https://files.ozbargain.com.au/n/32/688332x.jpg?h=afa76dd4','2022-03-13T18:34:32Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Rich Duprey)','2 Dividend-Paying Tech Stocks to Buy in March','Investors should stand ready to take advantage of these fast-growing tech stocks.','Inflation is running higher than it has in 40 years, national average gas prices just broke through to record highs, and Russia"s invasion of Ukraine is roiling commodities markets.
+
+Couple all this … [+4883 chars]','https://www.fool.com/investing/2022/03/12/2-dividend-paying-tech-stocks-to-buy-in-march/','https://g.foolcdn.com/editorial/images/669544/mobile-smartphone-video-chat-text-getty.jpeg','2022-03-12T11:32:00Z');
+
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+
+                    values('nvidia','Digital Trends','Luke Larsen','Asus ROG Flow Z13 review: A gaming tablet with guts','The Asus ROG Flow Z13 proves why a gaming tablet might be a good alternative to a gaming laptop after all.','The ROG Flow Z13 shouldnt be possible.
+
+Its a device not much bigger than a Surface Pro, yet with some bona fide gaming parts inside. It’s a 2-in-1 laptop detachable keyboard and all but with the pow… [+16876 chars]','https://www.digitaltrends.com/laptop-reviews/asus-rog-flow-z13-review/','https://icdn.digitaltrends.com/image/digitaltrends/rog-flow-z13-02.jpg','2022-03-13T13:00:26Z');
+, parameters: None
+[2022-03-21 10:14:05,799] {dbapi.py:186} INFO - Rows affected: 1
+[2022-03-21 10:14:05,812] {python.py:118} INFO - Done. Returned value was: None
+[2022-03-21 10:14:05,865] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=write_to_postgres, execution_date=20220312T000000, start_date=20220321T101404, end_date=20220321T101405
+[2022-03-21 10:14:05,992] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-03-21 10:14:06,032] {local_task_job.py:146} INFO - Task exited with return code 0

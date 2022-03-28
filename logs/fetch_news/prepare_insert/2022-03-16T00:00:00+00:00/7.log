@@ -1,0 +1,104 @@
+[2022-03-21 10:14:02,325] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.prepare_insert 2022-03-16T00:00:00+00:00 [queued]>
+[2022-03-21 10:14:02,418] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.prepare_insert 2022-03-16T00:00:00+00:00 [queued]>
+[2022-03-21 10:14:02,425] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 10:14:02,427] {taskinstance.py:1043} INFO - Starting attempt 7 of 7
+[2022-03-21 10:14:02,428] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 10:14:02,493] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): prepare_insert> on 2022-03-16T00:00:00+00:00
+[2022-03-21 10:14:02,531] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'prepare_insert', '2022-03-16T00:00:00+00:00', '--job-id', '568', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmp71w6jyi1', '--error-file', '/tmp/tmp0ppfzgp0']
+[2022-03-21 10:14:02,545] {standard_task_runner.py:77} INFO - Job 568: Subtask prepare_insert
+[2022-03-21 10:14:02,509] {standard_task_runner.py:52} INFO - Started process 1340 to run task
+[2022-03-21 10:14:02,885] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.prepare_insert 2022-03-16T00:00:00+00:00 [running]> on host e39215f0be5b
+[2022-03-21 10:14:03,380] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=prepare_insert
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-16T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-16T00:00:00+00:00
+[2022-03-21 10:14:03,382] {logging_mixin.py:104} INFO - /tmp/news_nvidia_2022-03-16_2022-03-17.sql
+[2022-03-21 10:14:03,387] {logging_mixin.py:104} INFO - insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Engadget','Kris Holt','Samsung"s Neo QLED 8K TVs are available for pre-order, starting at $3,500','Samsung
+ has opened up pre-orders
+ for many of its 2022 TVs and revealed when you"ll be able to lock in an order for some of its other upcoming displays. The company is refreshing its Neo QLED sets this year with features such as refresh rates of up to 144H…','Samsung
+ has opened up pre-orders
+ for many of its 2022 TVs and revealed when you"ll be able to lock in an order for some of its other upcoming displays. The company is refreshing its Neo QLED sets… [+1813 chars]','https://www.engadget.com/samsung-2022-tv-pre-order-neo-qled-the-frame-oled-181541669.html','https://s.yimg.com/os/creatr-uploaded-images/2022-03/9c8173a0-a61b-11ec-b7ff-2afb32e2bd62','2022-03-17T18:15:41Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Digital Trends','Monica J. White','The future of fast PC graphics? Connecting directly to SSDs','Nvidia and IBM want to bring greater improvements than expected to PC graphics by connecting the GPU to an SSD.','Performance boosts are expected with each new generation of the best graphics cards, but it seems that Nvidia and IBM have their sights set on greater changes.
+The companies teamed up to work on Big… [+3152 chars]','https://www.digitaltrends.com/computing/nvidia-and-ibm-team-up-to-connect-gpu-directly-to-ssd/','https://icdn.digitaltrends.com/image/digitaltrends/gpu-temperature.jpg','2022-03-17T20:31:55Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Android Central','jayar.decenella@gmail.com (Jay Bonggolto)','Phone shortages could get worse as Foxconn halts Shenzhen operation','As the number of COVID-19 cases increased, Shenzhen was once again placed under lockdown, forcing Foxconn and other manufacturers to suspend operations in the area.','<ul><li>Foxconn has suspended its production in Shenzhen after authorities placed the city under lockdown along with Shanghai.</li><li>The new restrictions are expected to deal another major blow to … [+1742 chars]','https://www.androidcentral.com/foxconn-stops-shenzhen-factory-production','https://cdn.mos.cms.futurecdn.net/T9TfmdTHjh8MyzuqYkrgek-1200-80.png','2022-03-16T08:41:48Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','Sean Endicott','Arm will cut up to 1,000 jobs, directly affecting up to 15% of employees','As many as 1,000 Arm employees are set to lose their jobs with the company.
+
+
+
+What you need to know
+
+
+Arm will reportedly cut hundreds of employees, which accounts for up to 15% of the company"s workforce.
+Arm expanded its workforce after the announcement of…','Arm will cut up to 15% of its workforce according to a report by The Telegraph. Up to 1,000 Arm employees will lose their jobs, the majority of which will be based in the United States and the United… [+1499 chars]','https://www.windowscentral.com/arm-will-cut-15-its-workers-following-failed-acquisition-nvidia','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2020/10/surface-pro-x-sq2-ports.jpg','2022-03-16T13:06:10Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','John Levite','Save $350 on this Acer Predator Triton laptop with RTX graphics today only','The Acer Predator Triton 300 SE laptop has dropped in price to $999.99 at Best Buy. This sale is one of Best Buy"s deals of the day and is in fact the featured deal. It"s a huge $350 price drop from the laptop"s regular price. While we have seen other Acer Pr…','The Acer Predator Triton 300 SE laptop has dropped in price to $999.99 at Best Buy. This sale is one of Best Buy"s deals of the day and is in fact the featured deal. It"s a huge $350 price drop from … [+1580 chars]','https://www.windowscentral.com/save-350-acer-predator-triton-laptop-rtx-graphics-today-only','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2022/03/acer-predator-triton-laptop.jpg','2022-03-17T15:20:01Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Digital Trends','Jacob Roach','AMD FSR 2.0 takes notes from DLSS — and it’s coming soon','AMD has pulled back the curtain on FSR 2.0, which should arrive soon. The company also released its general-purpose RSR upscaling solution for all AMD GPUs.','AMD has lifted the curtain on the new version of FidelityFX Super Resolution (FSR), and this time around, it’s looking to be a more direct competitor to Nvidia’s DLSS. The aptly named FSR 2.0 promise… [+2793 chars]','https://www.digitaltrends.com/computing/amd-announces-fsr-2-launches-rsr/','https://icdn.digitaltrends.com/image/digitaltrends/deathloop-fsr-2-comparison.jpg','2022-03-17T13:00:18Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Rich Smith)','Why Nvidia Stock Keeps Hopping Higher','Wells Fargo has high hopes for Nvidia during GTC 2022 next week.','What happened
+Semiconductor star Nvidia( NVDA 6.08% ) is having another great day on Wednesday, with its stock up 5.5% as of 10:55 a.m. ET.
+You can thank Wells Fargo for that.
+Image source: Getty … [+1835 chars]','https://www.fool.com/investing/2022/03/16/why-nvidia-stock-keeps-hopping-higher/','https://g.foolcdn.com/editorial/images/670722/golden-2022-with-a-green-arrow-pointing-up.jpg','2022-03-16T16:29:38Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Will Healy)','Is Nvidia Stock a Buy Now?','Its valuation remains elevated, and investors may have overlooked one key danger.','Nvidia ( NVDA -1.18% ) is considered by some to be the world"s leading semiconductor company. Its GPUs power applications in artificial intelligence, virtual reality, and data centers, and its massiv… [+3789 chars]','https://www.fool.com/investing/2022/03/17/is-nvidia-stock-a-buy-now/','https://g.foolcdn.com/editorial/images/670510/gettyimages-1339056287.jpg','2022-03-17T15:19:47Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','MakeUseOf','Christian Cawley','10 Things To Do After You Have Installed Ubuntu 21.10','Switching to Ubuntu from Windows should go as smoothly as possible. Here are the most important things to do after installing Ubuntu.','Switching to Ubuntu from Windows might be a big step, but it"s one that you want to go as smoothly as possible. Just as you might configure Windows and the desktop theme, install the latest updates, … [+8640 chars]','https://www.makeuseof.com/tag/5-things-right-installing-ubuntu/','https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/03/muo-linux-ubuntu-post-install-featured.jpg','2022-03-16T13:45:13Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','SlashGear','staff@slashgear.com (Gabriel Moss)','What Is NVIDIA G-Sync?','You&#039;ve probably heard of NVIDIA&#039;s G-Sync technology, but do you know what it&#039;s for? Here&#039;s a simple primer to help you understand why these monitors matter.','Normally, your gaming PC and your monitor (or TV, if that suits your fancy) are operating on two different sets of rules. If you don"t look closely, you might think they"re working together in unison… [+1061 chars]','https://www.slashgear.com/803081/what-is-nvidia-g-sync/','https://www.slashgear.com/img/gallery/what-is-nvidia-g-sync/l-intro-1647551781.jpg','2022-03-17T21:19:04Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','Sean Endicott','Radeon Super Resolution boosts gaming performance, and it"s available now','You don"t have to wait for game developers to implement AMD"s new performance-boosting technology.
+
+
+
+What you need to know
+
+
+Radeon Super Resolution is now available in the latest driver update from AMD.
+The feature can boost the performance of any game that…','Radeon Super Resolution is now available through the latest driver from AMD. The technology can boost the framerate of any game, even without any specific implementation by developers. Competing tech… [+1650 chars]','https://www.windowscentral.com/amd-boosts-performance-all-pc-games-radeon-super-resolution','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2021/01/asus-tuf-gaming-rx-6800-hero-01.jpg','2022-03-17T14:50:14Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','GSMArena.com','Ricky','Arm will reportedly lay off 15% of its workers following a failed Nvidia acquisition','Last month, Nvidia officially confirmed that its acquisition of Arm was being terminated due to complications with convincing regulators that the merger would not affect Arm’s free licensing model. Softbank (Japanese investment company and current owner of Ar…','Last month, Nvidia officially confirmed that its acquisition of Arm was being terminated due to complications with convincing regulators that the merger would not affect Arms free licensing model. So… [+1270 chars]','https://www.gsmarena.com/arm_will_reportedly_lay_off_15_of_its_workers_following_a_failed_nvidia_acquisition-news-53577.php','https://fdn.gsmarena.com/imgroot/news/22/03/arm-layoffs-2022/-952x498w6/gsmarena_000.jpg','2022-03-16T03:09:01Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Digital Trends','Monica J. White','AMD’s next budget GPU may be a killer card — here’s why','Known leaker suggests that AMD Radeon RX 7000 may outperform the previous gen by miles, and will beat Nvidia"s RTX 4000 on power consumption.','The release of AMD’s Radeon RX 7000 graphics cards is still a while away, but we’re already hearing rumors about the performance and power requirements of these next-gen graphics cards.
+Today, a kno… [+2735 chars]','https://www.digitaltrends.com/computing/amd-radeon-rx-7000-power-consumption-and-performance-leaks/','https://icdn.digitaltrends.com/image/digitaltrends/amds-rx-6900-xt-2.jpg','2022-03-16T17:25:50Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','TechRadar','Max Slater-Robins','Dell, Intel, and Nvidia are teaming up on a metaverse for professionals','Dell is collaborating with Nvidia to build the infrastructure for the metaverse.','Dell, Nvidia, and Intel are working together on new tools to help designers and creatives collaborate in 3D virtual environments.
+The basis is Nvidia"s so-called Omniverse, built for design collabor… [+2127 chars]','https://www.techradar.com/news/dell-intel-and-nvidia-are-working-together-to-create-3d-worlds-for-creators','https://cdn.mos.cms.futurecdn.net/NMYMf2YbF9uwtDScqgyYUR-1200-80.jpg','2022-03-16T13:11:34Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Slickdeals.net','joshftw','ASRock Radeon RX 6700 XT Challenger D Gaming 12GB GDDR6 Graphics Card $550 via Newegg App + Free S/H','Newegg via Mobile App (link for reference) has *ASRock Radeon RX 6700 XT Challenger D Gaming 12GB GDDR6 Graphics Card* on sale for *$549.99* when you *follow instructions below*. *Shipping is free*....','How long would a VGA last before buying a new one?I don"t work for nvidia, but I use GeForce Now and with 50$ / 6 mo. you don"t need a VGA like this, can don"t need to spend on new PC, new CPU, new D… [+130 chars]','https://slickdeals.net/f/15671623-asrock-radeon-rx-6700-xt-challenger-d-gaming-12gb-gddr6-graphics-card-550-via-newegg-app-free-s-h','https://static.slickdealscdn.com/attachment/3/0/5/4/6/7/0/11273923.attach','2022-03-16T11:33:36Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','TechRadar','Max Slater-Robins','Nvidia and IBM have a plan to connect GPUs straight to SSDs','Computing giants Nvidia and IBM detail plan to boost ML training and other tasks.','Nvidia, IBM, and researchers have a plan to make the lives of those working in machine learning a bit easier: connecting GPUs directly to SSDs. 
+Detailed in a research paper, the idea is called Big … [+1628 chars]','https://www.techradar.com/news/nvidia-and-ibm-have-a-plan-to-connect-gpus-straight-to-ssds','https://cdn.mos.cms.futurecdn.net/Aa9K2ugMAG9SeAYEQXSue-1200-80.jpg','2022-03-16T15:48:51Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','Robert Carnevale','Dell unleashes new USB-C and 4K UHD gaming monitors','Dell has two new screens for your consideration.
+
+
+
+What you need to know
+
+
+Dell is launching its 32-inch 4K UHD gaming monitor (G3223Q) and 32-inch USB-C gaming monitor (G3223D) during March 2022.
+North America is getting everything last, with the USB-C disp…','Dell"s latest two monitors are here for you to peruse and, if you have the cash and the inclination, buy. If you"re in a region that"s not North America or EMEA, you already have access to both of th… [+1697 chars]','https://www.windowscentral.com/dells-latest-32-inch-4k-uhd-and-usb-c-gaming-monitors-are-here','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2022/03/g3223q-hero-shot.jpg','2022-03-16T18:15:54Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Chris Neiger)','The Best Stocks to Invest $1,000 in Right Now','The market is a bit scary now -- but these long-term tech plays are more than worth your attention.','There"s a lot of news causing the market instability right now. Inflation is at a 40-year high, interest rate hikes are coming from the Federal Reserve, conflict is rising in Europe, and oil prices w… [+4384 chars]','https://www.fool.com/investing/2022/03/16/the-best-stocks-to-invest-1000-in-right-now/','https://g.foolcdn.com/editorial/images/670515/gettyimages-1125856232.jpg','2022-03-16T16:03:53Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Motley Fool','newsfeedback@fool.com (Stefon Walters)','The Nasdaq"s Soaring and Investors Are Watching These 2 Winning Stocks','These stocks can flourish amid market uncertainty.','The NASDAQ -- which is an acronym for National Association of Securities Dealers Automated Quotations -- is the second-largest stock exchange in the U.S. by market capitalization, trailing only behin… [+3633 chars]','https://www.fool.com/investing/2022/03/16/the-nasdaqs-soaring-and-investors-are-watching-the/','https://g.foolcdn.com/editorial/images/670531/gettyimages-1135420212_qhLvDnA.jpg','2022-03-16T12:51:00Z');
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','GSMArena.com','Michail','Redmi Max 100" TV and RedmiBook Pro 2022 arrive alongside new K50 series','Xiaomi capped off a big event earlier today where it announced the Redmi K50, K50 Pro and K40s phones. We also got a new 100-inch Redmi Max TV and a 15-inch Redmi Book Pro 2022 laptop.
+
+Redmi Max 100 TV
+
+Redmi Max 100 is the largest TV in Xiaomi’s product ran…','Xiaomi capped off a big event earlier today where it announced the Redmi K50, K50 Pro and K40s phones. We also got a new 100-inch Redmi Max TV and a 15-inch Redmi Book Pro 2022 laptop.
+Redmi Max 100… [+1938 chars]','https://www.gsmarena.com/redmi_max_100_tv_and_redmibook_pro_2022_announced-news-53609.php','https://fdn.gsmarena.com/imgroot/news/22/03/redmi-max-100-tv-redmibook-pro-2022/-952x498w6/gsmarena_00.jpg','2022-03-17T16:43:02Z');
+[2022-03-21 10:14:03,387] {logging_mixin.py:104} INFO - 
+[2022-03-21 10:14:03,388] {python.py:118} INFO - Done. Returned value was: None
+[2022-03-21 10:14:03,548] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=prepare_insert, execution_date=20220316T000000, start_date=20220321T101402, end_date=20220321T101403
+[2022-03-21 10:14:03,779] {taskinstance.py:1220} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-21 10:14:03,834] {local_task_job.py:146} INFO - Task exited with return code 0

@@ -1,0 +1,29 @@
+[2022-03-20 21:27:27,791] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.dowload_desc 2022-03-15T00:00:00+00:00 [queued]>
+[2022-03-20 21:27:27,998] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.dowload_desc 2022-03-15T00:00:00+00:00 [queued]>
+[2022-03-20 21:27:27,999] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 21:27:28,035] {taskinstance.py:1043} INFO - Starting attempt 8 of 8
+[2022-03-20 21:27:28,035] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-20 21:27:28,086] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): dowload_desc> on 2022-03-15T00:00:00+00:00
+[2022-03-20 21:27:28,100] {standard_task_runner.py:52} INFO - Started process 854 to run task
+[2022-03-20 21:27:28,162] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'dowload_desc', '2022-03-15T00:00:00+00:00', '--job-id', '403', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmpnhybkhl2', '--error-file', '/tmp/tmpp9tvqn7_']
+[2022-03-20 21:27:28,163] {standard_task_runner.py:77} INFO - Job 403: Subtask dowload_desc
+[2022-03-20 21:27:28,370] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.dowload_desc 2022-03-15T00:00:00+00:00 [running]> on host e39215f0be5b
+[2022-03-20 21:27:28,488] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=dowload_desc
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-15T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-15T00:00:00+00:00
+[2022-03-20 21:27:28,489] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2022-03-20 21:27:28,490] {bash.py:158} INFO - Running command: curl -o /tmp/news_nvidia.json https://newsapi.org/v2/everything -G -d from=2022-03-15 -d to=2022-03-16 -d language=en -d q=nvidia -d apiKey=1ddd1951b81c4e9eb662cc118c33ff6a
+[2022-03-20 21:27:28,523] {bash.py:169} INFO - Output:
+[2022-03-20 21:27:28,533] {bash.py:173} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2022-03-20 21:27:28,534] {bash.py:173} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2022-03-20 21:27:28,815] {bash.py:173} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 16153  100 16153    0     0  57483      0 --:--:-- --:--:-- --:--:-- 57483
+[2022-03-20 21:27:28,815] {bash.py:177} INFO - Command exited with return code 0
+[2022-03-20 21:27:28,867] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=dowload_desc, execution_date=20220315T000000, start_date=20220320T212727, end_date=20220320T212728
+[2022-03-20 21:27:29,059] {taskinstance.py:1220} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-20 21:27:29,093] {local_task_job.py:146} INFO - Task exited with return code 0

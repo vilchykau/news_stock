@@ -1,0 +1,115 @@
+[2022-03-27 12:06:23,187] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.prepare_insert 2022-03-21T00:00:00+00:00 [queued]>
+[2022-03-27 12:06:23,221] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: fetch_news.prepare_insert 2022-03-21T00:00:00+00:00 [queued]>
+[2022-03-27 12:06:23,221] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-27 12:06:23,221] {taskinstance.py:1043} INFO - Starting attempt 1 of 1
+[2022-03-27 12:06:23,221] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-27 12:06:23,250] {taskinstance.py:1063} INFO - Executing <Task(PythonOperator): prepare_insert> on 2022-03-21T00:00:00+00:00
+[2022-03-27 12:06:23,257] {standard_task_runner.py:52} INFO - Started process 45 to run task
+[2022-03-27 12:06:23,275] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_news', 'prepare_insert', '2022-03-21T00:00:00+00:00', '--job-id', '780', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/fetch_news.py', '--cfg-path', '/tmp/tmpp1kvoqfb', '--error-file', '/tmp/tmp8rn7em3k']
+[2022-03-27 12:06:23,276] {standard_task_runner.py:77} INFO - Job 780: Subtask prepare_insert
+[2022-03-27 12:06:23,607] {logging_mixin.py:104} INFO - Running <TaskInstance: fetch_news.prepare_insert 2022-03-21T00:00:00+00:00 [running]> on host dd6a275532f2
+[2022-03-27 12:06:23,897] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_news
+AIRFLOW_CTX_TASK_ID=prepare_insert
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-21T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-21T00:00:00+00:00
+[2022-03-27 12:06:23,902] {logging_mixin.py:104} INFO - /tmp/news_nvidia_2022-03-21_2022-03-22.sql
+[2022-03-27 12:06:23,902] {logging_mixin.py:104} INFO - delete from NEWS.NEWS_COMPANY where cast('2022-03-21' as DATE) = cast(PUBLISH_DATE as DATE);
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Wmleader.com','Raymond Hicks','GTC 2022: GPU topics go beyond tech prowess and applications - The Madison Leader Gazette','<ol><li>GTC 2022: GPU topics go beyond tech prowess and applications  The Madison Leader Gazette
+</li><li>NVIDIA Hopper GPU Architecture and H100 Accelerator Announced: Working Smarter and Harder  AnandTech
+</li><li>Nvidia reveals H100 GPU for AI and teases…','Did you miss a session at the Data Summit? Watch On-Demand Here.
+When Nvidias GTC conference kicks off this week, the sessions will be filled with some of the typical discussions on technical topics… [+5678 chars]','https://wmleader.com/technology/385222/gtc-2022-gpu-topics-go-beyond-tech-prowess-and-applications/',null,cast('2022-03-21T19:39:51Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Digital Trends','Zak Islam','AMD’s next superefficient GPUs could have Nvidia worried','A new rumor from well-known tech insider Moore"s Law Is Dead outlines the technical differences between Team Red’s RTX 7000 cards and Nvidia’s RTX 4000-series.','Given the performance upgrades weve seen in recent years in regard to graphics cards, the battle between AMD and Nvidias upcoming next-gen GPUs is shaping up to be one of the most exciting times in t… [+4355 chars]','https://www.digitaltrends.com/computing/amds-next-superefficient-gpus-could-have-nvidia-worried/','https://icdn.digitaltrends.com/image/digitaltrends/amd-radeon-rx-6500-xt-review-01.jpg',cast('2022-03-21T15:52:47Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Vice News','Joseph Cox, Emanuel Maiberg','Microsoft Investigating Claim of Breach by Extortion Gang','The LAPSUS$ group has previously compromised Nvidia and Samsung. Over the weekend the group published a screenshot that appeared to show access to internal Microsoft systems.','Microsoft is investigating claims that an extortion-focused hacking group that has previously compromised massive companies such as Ubisoft and Nvidia has gained access to internal Microsoft systems,… [+4448 chars]','https://www.vice.com/en/article/y3vk9x/microsoft-hacked-lapsus-extortion-investigating','https://video-images.vice.com/articles/62386e3812f2c5009b208440/lede/1647865413606-microsoft.jpeg?image-resize-opts=Y3JvcD0xeHc6MC44NDI4eGg7MHh3LDB4aCZyZXNpemU9MTIwMDoqJnJlc2l6ZT0xMjAwOio',cast('2022-03-21T12:36:47Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Slashdot.org','BeauHD','Microsoft Investigating Claims of Hacked Source Code Repositories','Microsoft says they are investigating claims that the Lapsus$ data extortion hacking group breached their internal Azure DevOps source code repositories and stolen data. BleepingComputer reports: Unlike many extortion groups we read about today, Lapsus$ does …','Unlike many extortion groups we read about today, Lapsus$ does not deploy ransomware on their victim"s devices. Instead, they target the source code repositories for large companies, steal their prop… [+1460 chars]','https://it.slashdot.org/story/22/03/21/2154227/microsoft-investigating-claims-of-hacked-source-code-repositories','https://a.fsdn.com/sd/topics/microsoft_64100.png',cast('2022-03-21T22:40:00Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Android Central','Derrek Lee','Apple TV app gets downgraded on Android TV, won"t let users buy or rent movies','Android TV users complain that they can no longer rent or buy movies and shows from the Apple TV app following a recent update.','<ul><li>The Apple TV app on Android TV has apparently stopped allowing in-app transactions.</li><li>Users have noticed that they can no longer rent or buy movies and shows through the Apple TV app.</… [+2455 chars]','https://www.androidcentral.com/apple-tv-android-tv-in-app-purchases','https://cdn.mos.cms.futurecdn.net/DvAmPHwuCCeA7BLXg9RWMY-1200-80.jpg',cast('2022-03-21T18:23:59Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','Sean Endicott','Hacking group that went after NVIDIA may have also attacked Microsoft','Microsoft is looking into claims that Lapsus$ has gained access to the company"s internal systems.
+
+
+
+What you need to know
+
+
+Hacking group Lapsus$ claims that it has gained access to Microsoft"s internal systems, according to a recent report.
+Lapsus$ often s…','Well-known hacking group Lapsus$ claimed that it gained access to Microsoft"s internal systems, according to a report by Motherboard. Lapsus$ has stolen data from NVIDIA, Samsung, and other companies… [+1388 chars]','https://www.windowscentral.com/microsoft-may-have-been-hit-same-hackers-who-went-after-nvidia','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2022/01/microsoft-logo-2022-2.jpg',cast('2022-03-21T13:58:41Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','VentureBeat','Peter Wayner','GTC 2020: GPU topics go beyond tech prowess and applications','GPUs were once only noticed by gamers and AI scientists, but they are now key components in many of the most essential parts of the economy. GPUs are the highest-profile circuits sold at the highest prices and are of flagship for the entire industry. When the…','Did you miss a session at the Data Summit? Watch On-Demand Here.
+When Nvidias GTC conference kicks off this week, the sessions will be filled with some of the typical discussions on technical topics… [+5678 chars]','https://venturebeat.com/2022/03/21/gtc-2020-gpu-topics-go-beyond-tech-prowess-and-applications/','https://venturebeat.com/wp-content/uploads/2022/03/GPU_circuit_board.jpg?w=1200&strip=all',cast('2022-03-21T10:30:00Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','9to5Mac','Ben Lovejoy','Apple TV app on Android and Google TV now blocks movie rentals and purchases','The Apple TV app on both Android TV and Google TV no longer offers the option to buy or rent movies, while Apple TV+ subscriptions can still be purchased.
+It’s being suggested that the change may have been made to avoid Google’s 30% commission on sales throug…','The Apple TV app on both Android TV and Google TV no longer offers the option to buy or rent movies, while Apple TV+ subscriptions can still be purchased.
+It’s being suggested that the change may ha… [+1694 chars]','https://9to5mac.com/2022/03/21/apple-tv-app-on-android-blocks-sales/','https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2022/03/Apple-TV-app-on-Android-TV.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1',cast('2022-03-21T12:08:30Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','Sean Endicott','LG’s fancy new gram laptops are only available in Korea','LG"s new gram laptops are faster than ever, but you"ll have to wait to get one if you"re outside of South Korea.
+
+2021 model of the LG gram 17.
+
+What you need to know
+
+
+LG just announced refreshes of its gram 16 and 17 laptops.
+The new LG gram 16 and 17 run o…','LG just announced new versions of its gram 16 and gram 17 laptops. The devices feature 12th Gen Intel Core processors and optional NVIDIA RTX 2050 graphics. LG promises 70% speed improvements over th… [+1349 chars]','https://www.windowscentral.com/lg-announces-new-gram-laptops-12th-gen-intel-cpus-and-nvidia-rtx-2050-graphics','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2021/03/lg-gram-17-2021-1.jpg',cast('2022-03-21T16:44:50Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','GSMArena.com','Peter','LG Gram 16 and 17 unveiled with 12th gen Intel CPUs, optional Nvidia RTX 2050 GPU','The LG Gram laptops from last year arrived with 11th gen Intel processors and relied on the Iris Xe iGPUs. Now the company has unveiled upgraded laptops that feature 12th gen Intel processors and optional dedicated Nvidia RTX 2050 graphics.
+
+
+
+
+
+
+
+LG Gram 17 …','The LG Gram laptops from last year arrived with 11th gen Intel processors and relied on the Iris Xe iGPUs. Now the company has unveiled upgraded laptops that feature 12th gen Intel processors and opt… [+2898 chars]','https://www.gsmarena.com/lg_gram_16_and_17_unveiled_with_12th_gen_intel_cpus_optional_nvidia_rtx_2050_gpu-news-53647.php','https://fdn.gsmarena.com/imgroot/news/22/03/lg-gram-12th-gen-intel/-952x498w6/gsmarena_000.jpg',cast('2022-03-21T12:16:01Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Theregister.com','Agam Shah','Supermicro"s "universal GPU" system welcomes all elements','Biz touts its ultra-composable server platform as future-proof
+Supermicro’s new "Universal GPU" servers, announced on Monday, is as equal-opportunity as silicon tech can get – it does not discriminate on CPUs, GPUs, storage, and networking technologies.…','Supermicros new "Universal GPU" servers, announced on Monday, is as equal-opportunity as silicon tech can get it does not discriminate on CPUs, GPUs, storage, and networking technologies.
+The boxen … [+2010 chars]','https://www.theregister.com/2022/03/21/supermicro_universal_gpu/','https://regmedia.co.uk/2022/03/21/supermicro.jpg',cast('2022-03-21T20:11:12Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Windows Central','Robert Carnevale','Experts weigh in on Big Tech ramifications of Russia legalizing piracy','As Russia"s war on Ukraine heats up, so too do the international ramifications.
+
+
+
+Ever since Russia invaded Ukraine, more and more countries and companies have denounced the action and worked to sanction or otherwise punish the conflict"s initiator. Said pun…','Ever since Russia invaded Ukraine, more and more countries and companies have denounced the action and worked to sanction or otherwise punish the conflict"s initiator. Said punishments have led to Ru… [+7126 chars]','https://www.windowscentral.com/heres-what-russia-legalizing-piracy-could-mean-tech-companies','https://www.windowscentral.com/sites/wpcentral.com/files/styles/large/public/field/image/2013/09/Russia_WindowsPhone_0.jpg',cast('2022-03-21T17:00:02Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','XDA Developers','Kishan Vyas','Mozilla Firefox will finally add support for AV1 hardware acceleration','Mozilla says it’s finally ready to add support for the AV1 codec in the Firefox browser. While competitors like Google Chrome and Microsoft Edge have long supported hardware-accelerated AV1 video codec, Firefox missed out on this feature. But at long last, th…','Mozilla says it’s finally ready to add support for the AV1 codec in the Firefox browser. While competitors like Google Chrome and Microsoft Edge have long supported hardware-accelerated AV1 video cod… [+1854 chars]','https://www.xda-developers.com/mozilla-firefox-av1-codec-support/','https://www.xda-developers.com/files/2020/10/AV1-codec.jpg',cast('2022-03-21T06:47:01Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','MacRumors','Hartley Charlton','Apple Removes Ability to Buy and Rent in Update to Apple TV App for Android TV and Google TV','Apple has seemingly removed the ability to buy and rent TV shows and movies in the Apple TV app for Android TV and Google TV in the latest update to the app.
+
+
+
+
+
+When the ‌Apple TV‌ app launched on Google TV early last year and Android TV in the summer, it i…','Apple has seemingly removed the ability to buy and rent TV shows and movies in the Apple TV app for Android TV and Google TV in the latest update to the app.
+When the ‌Apple TV‌ app launched on Goog… [+1502 chars]','https://www.macrumors.com/2022/03/21/apple-removes-buy-and-rent-for-android-and-google/','https://images.macrumors.com/t/cC6rE_4Ar0EzfCqi96vhke9PvH8=/1600x/article-new/2020/12/chromecast-with-google-tv.jpg',cast('2022-03-21T14:10:41Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','TheStreet','Brian O"Connell','Semiconductor Watchlist: Micron, Nvidia Applied Materials','Chips rebound as long-term plant construction plans take shape','The benchmark PHLX Index (SOX) started at 3,432 this week, up 9.1% over the prior week. The SOX remains down 14% on a year-to-date basis.
+The week saw a number of major semiconductor funds rising at… [+9857 chars]','https://www.thestreet.com/investing/semiconductor-watchlist-micron-nvidia-applied-materials','https://www.thestreet.com/.image/t_share/MTg2OTk0MjUxNTA1MDg0MzE3/software8.jpg',cast('2022-03-21T14:57:00Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Videocardz.com',null,'NVIDIA next-gen H100 Hopper GPU for High Performance Computing pictured - VideoCardz.com','<ol><li>NVIDIA next-gen H100 Hopper GPU for High Performance Computing pictured  VideoCardz.com
+</li><li>GTC 2022 Keynote with NVIDIA CEO Jensen Huang  NVIDIA
+</li><li>Watch The Nvidia GTC 2022 Keynote Here Now  Tom"s Hardware
+</li><li>NVIDIA H100 Hopper G…','Tomorrow NVIDIA CEO Jensen Huang will announce the new H100 series of products for data-centers. 
+The render that leaks just hours ahead of the announcement confirms some key details on NVIDIAs Hopp… [+910 chars]','https://videocardz.com/newz/nvidia-next-gen-h100-hopper-gpu-for-high-performance-computing-pictured','https://cdn.videocardz.com/1/2022/03/NVIDIA-H100-Hero-1.jpg',cast('2022-03-21T21:56:00Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','XDA Developers','João Carrasqueira','LG launches new gram laptops with Intel Alder Lake processors in Korea','LG is refreshing its ultra-light gram laptops with 12th-generation Intel processors and optional discrete graphics, the company has announced. The 2022 LG gram lineup includes 14-, 15-, 16- and 17-inch sizes, but the focus is on the two larger models. The LG …','LG is refreshing its ultra-light gram laptops with 12th-generation Intel processors and optional discrete graphics, the company has announced. The 2022 LG gram lineup includes 14-, 15-, 16- and 17-in… [+2764 chars]','https://www.xda-developers.com/lg-launches-gram-laptops-2022-korea/','https://www.xda-developers.com/files/2022/03/LG-gram-3.jpg',cast('2022-03-21T18:15:12Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Phoronix',null,'TornadoVM 0.13 Released For Java OpenJDK/GraalVM Offloading To GPUs, FPGAs & More','TornadoVM continues advancing as the open-source plug-in to OpenJDK and GraalVM that allows Java programs to run on heterogeneous hardware from GPUs to FPGAs and other targets...','TornadoVM continues advancing as the open-source plug-in to OpenJDK and GraalVM that allows Java programs to run on heterogeneous hardware from GPUs to FPGAs and other targets.
+TornadoVM allows mult… [+1071 chars]','https://www.phoronix.com/scan.php?page=news_item&px=TornadoVM-0.13','https://www.phoronix.net/image.php?id=2022&image=tornadovm',cast('2022-03-21T10:48:25Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Creative Bloq','jessica.weatherbed@futurenet.com (Jess Weatherbed)','Razer Blade 17 (2022) review','The Razer Blade 17 (2022) is a gold standard mobile workstation designed for creatives.','The Razer Blade 17 (2022) is a laptop of many talents, including hardware and features that can appeal to a wide range of different consumers, but many feel like they"re specifically targeting 3D art… [+12409 chars]','https://www.creativebloq.com/reviews/razer-blade-17','https://cdn.mos.cms.futurecdn.net/JScX3giLpSkc7d6we78p7Q-1200-80.jpg',cast('2022-03-21T10:27:49Z' as TIMESTAMP));
+insert into NEWS.NEWS_COMPANY(COMPANY, SOURCE_NAME, AUTHOR, TITLE, DESCRIPTION, CONTENT, URL, IMG_URL, PUBLISH_DATE) 
+                    values('nvidia','Ghacks Technology News','Martin Brinkmann','Firefox 100 is getting AV1 hardware decoding support on Windows','The first three-digit version of the Firefox web browser introduces support for AV1 hardware decoding on the Windows operating system.  Planned for a May 3, 2022 release, Firefox 100 will use hardware […]
+Thank you for being a Ghacks reader. The post Firefox …','The first three-digit version of the Firefox web browser introduces support for AV1 hardware decoding on the Windows operating system.  Planned for a May 3, 2022 release, Firefox 100 will use hardwar… [+2205 chars]','https://www.ghacks.net/2022/03/21/firefox-100-is-getting-av1-hardware-decoding-support-on-windows/','https://www.ghacks.net/wp-content/uploads/2022/03/youtube-av1-codec.png',cast('2022-03-21T06:05:19Z' as TIMESTAMP));
+[2022-03-27 12:06:23,902] {logging_mixin.py:104} INFO - 
+[2022-03-27 12:06:23,902] {python.py:118} INFO - Done. Returned value was: None
+[2022-03-27 12:06:24,054] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=fetch_news, task_id=prepare_insert, execution_date=20220321T000000, start_date=20220327T120623, end_date=20220327T120624
+[2022-03-27 12:06:24,501] {taskinstance.py:1220} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-03-27 12:06:24,585] {local_task_job.py:146} INFO - Task exited with return code 0
