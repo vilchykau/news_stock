@@ -1,3 +1,5 @@
 .vscode/
 logs/
 database/.project
+
+dags/__pycache__
