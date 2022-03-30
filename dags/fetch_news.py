@@ -3,8 +3,10 @@ import json
 from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.operators.bash import BashOperator
+from airflow.operators.latest_only import LatestOnlyOperator
 from airflow.operators.python import PythonOperator
 from airflow.hooks.postgres_hook import PostgresHook
+from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 my_dag = DAG("fetch_news",
              start_date=datetime(2022, 3, 10, 00, 00),
@@ -86,4 +88,49 @@ write_to_postgres = PythonOperator(
     }
 )
 
+is_last = LatestOnlyOperator(task_id='last_only', dag=my_dag)
+
+start_reload_model = DummyOperator(task_id='start_reload_model')
+
+load_model_links = DummyOperator(task_id='load_model_links')
+
+load_news = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_news",
+    sql='call DWH.load_news();',
+)
+
+load_url = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_url",
+    sql='call DWH.load_url();',
+)
+
+load_company = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_company",
+    sql='call DWH.LOAD_COMPANY();',
+)
+
+link_news_url = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="link_news_url",
+    sql='call DWH.LINK_NEWS_URL();',
+)
+
+link_news_company = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="link_news_company",
+    sql='call DWH.LINK_NEWS_COMPANY();',
+)
+
+clear_metadata = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="clear_metadata",
+    sql='call DWH.CLEAR_METADATA();',
+)
+
 start >> dowload_desc >> prepare_insert >> write_to_postgres
+[write_to_postgres, is_last] >> start_reload_model
+start_reload_model >> [load_news, load_url, load_company] >> load_model_links
+load_model_links >> [link_news_company, link_news_url] >> clear_metadata
