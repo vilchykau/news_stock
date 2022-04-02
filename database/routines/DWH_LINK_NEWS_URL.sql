@@ -7,9 +7,9 @@ begin
     insert into dwh.lne_originalstored_ur_at( ne_id_originalstored
                                             , ur_id_at
                                             , metadata_ne_originalstored_ur_at)
-    select nw.ne_id
-         , ur.ur_id
-         , 0
+    select distinct nw.ne_id
+                  , ur.ur_id
+                  , 0
     from sa.news_company sn
              inner join dwh.lne_news nw on
             nw.ne_tit_news_title = sn.title
@@ -22,9 +22,9 @@ begin
     insert into dwh.lne_imagestored_ur_at( ne_id_imagestored
                                          , ur_id_at
                                          , metadata_ne_imagestored_ur_at)
-    select nw.ne_id
-         , ur.ur_id
-         , 0
+    select distinct nw.ne_id
+                  , ur.ur_id
+                  , 0
     from sa.news_company sn
              inner join dwh.lne_news nw on
             nw.ne_tit_news_title = sn.title
