@@ -25,3 +25,18 @@ create table NEWS_COMPANY
 alter table NEWS_COMPANY
     owner to AIRFLOW;
 
+create table SA.STOCKS_COMPANY
+(
+    COMPANY varchar (500),
+    TRADE_DATE DATE,
+    OPEN double precision,
+    HIGH double precision,
+    LOW double precision,
+    CLOSE double precision,
+    VOLUME INTEGER,
+    INSERT_DT TIMESTAMP default CURRENT_TIMESTAMP
+);
+
+alter table SA.STOCKS_COMPANY
+    owner to AIRFLOW;
+
