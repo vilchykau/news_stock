@@ -112,6 +112,12 @@ load_company = PostgresOperator(
     sql='call DWH.LOAD_COMPANY();',
 )
 
+load_date = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_date",
+    sql="call DWH.load_date('NEWS');",
+)
+
 link_news_url = PostgresOperator(
     postgres_conn_id='news_in',
     task_id="link_news_url",
@@ -124,13 +130,15 @@ link_news_company = PostgresOperator(
     sql='call DWH.LINK_NEWS_COMPANY();',
 )
 
-clear_metadata = PostgresOperator(
+link_news_date = PostgresOperator(
     postgres_conn_id='news_in',
-    task_id="clear_metadata",
-    sql='call DWH.CLEAR_METADATA();',
+    task_id="link_news_date",
+    sql='call DWH.LINK_NEWS_DATE();',
 )
+
+end = DummyOperator(task_id='end')
 
 start >> dowload_desc >> prepare_insert >> write_to_postgres
 [write_to_postgres, is_last] >> start_reload_model
-start_reload_model >> [load_news, load_url, load_company] >> load_model_links
-load_model_links >> [link_news_company, link_news_url] >> clear_metadata
+start_reload_model >> [load_news, load_url, load_company, load_date] >> load_model_links
+load_model_links >> [link_news_company, link_news_url, link_news_date] >> end

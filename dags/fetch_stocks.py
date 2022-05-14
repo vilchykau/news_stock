@@ -7,6 +7,7 @@ from airflow.operators.dummy import DummyOperator
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.hooks.postgres_hook import PostgresHook
+from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 
 #API key:  OI736XXBB9GJWUC3
@@ -99,4 +100,41 @@ write_to_postgres = PythonOperator(
     }
 )
 
+load_stocks = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_stocks",
+    sql='call DWH.load_stocks();',
+)
+
+load_date = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_date",
+    sql="call DWH.load_date('STOCKS');",
+)
+
+load_company = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="load_company",
+    sql='call DWH.LOAD_COMPANY();',
+)
+
+link_anchors = DummyOperator(task_id='link_anchors')
+
+link_stocks_date = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="link_stocks_date",
+    sql="call DWH.link_stocks_date();",
+)
+
+link_stocks_company = PostgresOperator(
+    postgres_conn_id='news_in',
+    task_id="link_stocks_company",
+    sql="call DWH.link_stocks_company();",
+)
+
+end = DummyOperator(task_id='end')
+
+
 start_operator >> dowload_desc >> prepare_insert >> write_to_postgres
+write_to_postgres >> [load_stocks, load_date, load_company] >> link_anchors
+link_anchors >> [link_stocks_date, link_stocks_company] >> end

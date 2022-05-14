@@ -13,7 +13,7 @@ begin
     insert into DWH.lur_url(ur_adr_url_address, ur_typ_utp_id, metadata_ur)
     select distinct sat.url
          , dw.utp_id
-         , 1
+         , 0
     from sa.news_company sat
     inner join DWH.utp_urltype dw on 'NEWS' = dw.utp_urltype
     left join DWH.lur_url old on old.ur_adr_url_address = sat.url
@@ -22,7 +22,7 @@ begin
     insert into DWH.lur_url(ur_adr_url_address, ur_typ_utp_id, metadata_ur)
     select distinct sat.img_url
          , dw.utp_id
-         , 1
+         , 0
     from sa.news_company sat
     inner join DWH.utp_urltype dw on 'IMAGE' = dw.utp_urltype
     left join DWH.lur_url old on old.ur_adr_url_address = sat.img_url

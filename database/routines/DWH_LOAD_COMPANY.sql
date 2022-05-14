@@ -14,7 +14,7 @@ begin
    
    	insert into dwh.lco_company 
 	(co_nam_company_name, metadata_co)
-	select distinct name, 1
+	select distinct name, 0
 	from SA.company
 	left join dwh.lco_company 
 		on co_nam_company_name = name
@@ -27,6 +27,6 @@ begin
     from SA.COMPANY ncomp
     inner join DWH.LCO_COMPANY comp on comp.CO_NAM_COMPANY_NAME = ncomp.NAME
     inner join DWH.COT_COUNTRY count on ncomp.COUNTRY = count.COT_COUNTRY
-   	where comp.metadata_co = 1;
+   	where comp.metadata_co = 0;
 END;
 $$ ;

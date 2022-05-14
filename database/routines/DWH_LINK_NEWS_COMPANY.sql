@@ -17,7 +17,10 @@ begin
              inner join DWH.lne_news dwh_ne
                         on dwh_ne.ne_tit_news_title = sn.title
                             and dwh_ne.ne_des_news_description = sn.description
-    where dwh_co.metadata_co = 1
-       or dwh_ne.metadata_ne = 1;
+    where dwh_ne.metadata_ne = 1
+      and not exists(select 1
+                     from DWH.lco_company_ne_about A
+                     where A.co_id_company = dwh_co.co_id
+                       and A.ne_id_about = dwh_ne.ne_id);
 END;
 $$;

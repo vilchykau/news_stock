@@ -20,6 +20,21 @@ begin
     TRUNCATE DWH._UR_TYP_URL_TYPE CASCADE;
     TRUNCATE DWH._UR_URL CASCADE;
     TRUNCATE DWH._UR_TYP_URL_TYPE CASCADE;
+
+    TRUNCATE DWH._DA_DATE CASCADE;
+    TRUNCATE DWH._DA_DAY_DATE_DAY CASCADE;
+    TRUNCATE DWH._DA_MON_DATE_MONTH CASCADE;
+    TRUNCATE DWH._DA_YER_DATE_YEAR CASCADE;
+
+    TRUNCATE DWH._tr_cls_trade_close CASCADE;
+    TRUNCATE DWH._tr_hgh_trade_high CASCADE;
+    TRUNCATE DWH._tr_low_trade_low CASCADE;
+    TRUNCATE DWH._tr_opn_trade_open CASCADE;
+    TRUNCATE DWH._tr_trade CASCADE;
+
+    truncate table DWH._tr_trade_da_when;
+    truncate table DWH._co_off_tr_trade;
+    truncate table DWH._ne_publish_da_when;
 end;
 $$;
 
