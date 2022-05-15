@@ -9,7 +9,7 @@ from airflow.hooks.postgres_hook import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 my_dag = DAG("fetch_news",
-             start_date=datetime(2022, 5, 10, 00, 00),
+             start_date=datetime(2022, 4, 20, 00, 00),
              schedule_interval="@daily",
              template_searchpath='/tmp_{{ ds }}_{{ next_ds }}',
              catchup=True,
