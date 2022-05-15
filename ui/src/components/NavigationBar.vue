@@ -2,6 +2,7 @@
     <nav class="global_nav">
         <router-link to="/" class="button_nav">News</router-link>
         <router-link to="/settings" class="button_nav">Settings</router-link>
+        <router-link to="/chart" class="button_nav">Chart</router-link>
     </nav>  
 </template>
 
