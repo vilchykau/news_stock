@@ -1,14 +1,10 @@
 from datetime import datetime
 import pandas as pd
-import requests
-import csv
 from airflow import DAG
 from airflow.operators.dummy import DummyOperator
-from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.hooks.postgres_hook import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
-
 
 #API key:  OI736XXBB9GJWUC3
 
@@ -48,11 +44,9 @@ def _prepare_insert(csv_file, sql_insert_file, **context):
                  where A.company = B.company
                  and A.trade_date = B.trade_date
                  and A.insert_dt < B.insert_dt);\n'''
-    print(sql_out)
+
     with open(sql_insert_file, 'w') as f:
         f.write(sql_out)
-    print(sql_insert_file)
-    print(sql_out)
 
 
 def _execute_query_with_hook(sql_file, **context):
